@@ -1,0 +1,19 @@
+.page {
+  --page-padding-block: clamp(48px, calc(37.333px + 2.963vw), 80px);
+  --page-padding-inline: clamp(32px, calc(2.667px + 8.148vw), 120px);
+  --page-gap: clamp(40px, calc(-26.667px + 7.407vw), 80px);
+
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  gap: var(--page-gap);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--page-padding-block) var(--page-padding-inline);
+}
+
+@media (width <= 900px) {
+  .page {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

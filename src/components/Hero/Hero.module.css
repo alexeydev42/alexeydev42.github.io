@@ -1,0 +1,85 @@
+.hero {
+  position: sticky;
+  top: var(--page-padding-block);
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  min-height: calc(100svh - var(--page-padding-block) * 2);
+}
+
+@media (width <= 900px) {
+  .hero {
+    position: static;
+    top: auto;
+    min-height: auto;
+  }
+}
+
+.languageSwitcher {
+  align-self: flex-start;
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-ui);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.08em;
+}
+
+.identity {
+  max-width: 420px;
+  margin-top: clamp(32px, calc(5.333px + 2.963vw), 48px);
+}
+
+.role {
+  margin-top: var(--space-12);
+  font-size: var(--font-size-role);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+.intro {
+  max-width: 380px;
+  margin-top: var(--space-16);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text-secondary);
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+  margin-top: clamp(40px, calc(-13.333px + 5.926vw), 72px);
+}
+
+.navigationLink {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-ui);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+  gap: var(--space-20);
+  margin-top: auto;
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+}
+
+.contactIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.contactLink:hover {
+  color: var(--color-accent);
+}

@@ -136,19 +136,16 @@ export const skillGroups: SkillGroup[] = [
 export const contacts: Contact[] = [
   {
     id: 'github',
-    icon: '/icons/github.svg',
     url: 'https://github.com/alexeydev42',
     label: 'GitHub',
   },
   {
     id: 'telegram',
-    icon: '/icons/telegram.svg',
     url: 'https://t.me/alexeydev42',
     label: 'Telegram',
   },
   {
     id: 'email',
-    icon: '/icons/email.svg',
     url: 'mailto:alexey.dev42@gmail.com',
     label: 'Email',
   },

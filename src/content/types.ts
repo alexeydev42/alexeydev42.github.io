@@ -28,9 +28,9 @@ export interface SkillGroup {
   skills: string[]
 }
 
+export type ContactId = 'github' | 'telegram' | 'email'
 export interface Contact {
-  id: string
-  icon: string
+  id: ContactId
   url: string
   label: string
 }

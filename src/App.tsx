@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
-import { content } from './content/portfolio'
+import { content, contacts } from './content/portfolio'
 import type { Language } from './content/types'
+import { Hero } from './components/Hero/Hero'
+
+import styles from './App.module.css'
 
 const LANGUAGE_STORAGE_KEY = 'portfolio-language'
 
@@ -27,15 +30,16 @@ function App() {
   const currentContent = content[language]
 
   return (
-    <main>
-      <h1>{currentContent.hero.name}</h1>
-      <p>{currentContent.hero.role}</p>
-      <p>{currentContent.hero.intro}</p>
-
-      <button type="button" onClick={toggleLanguage}>
-        {language === 'en' ? 'RU' : 'EN'}
-      </button>
-    </main>
+    <div className={styles.page}>
+      <Hero
+        hero={currentContent.hero}
+        language={language}
+        onToggleLanguage={toggleLanguage}
+        navigation={currentContent.navigation}
+        contacts={contacts}
+      />
+      <main></main>
+    </div>
   )
 }
 
