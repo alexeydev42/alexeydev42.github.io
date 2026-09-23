@@ -1,0 +1,51 @@
+:root {
+  /* Colors */
+  --color-background: #090e16;
+  --color-text-primary: #e3f0fa;
+  --color-text-secondary: #7a94ab;
+  --color-accent: #47d1e8;
+  --color-surface: rgb(18 28 41 / 62%);
+  --color-surface-hover: rgb(18 28 41 / 82%);
+  --color-border: rgb(36 56 77 / 65%);
+  --color-border-hover: rgb(71 209 232 / 28%);
+  --color-spotlight: rgb(15 56 87 / 34%);
+
+  /* Typography */
+  --font-family-base: 'Manrope', sans-serif;
+  --font-size-display: 3.125rem;
+  --font-size-role: 1.3125rem;
+  --font-size-title: 1.125rem;
+  --font-size-body: 1rem;
+  --font-size-body-small: 0.875rem;
+  --font-size-caption: 0.8125rem;
+  --font-size-label: 0.75rem;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.12;
+  --line-height-heading: 1.25;
+  --line-height-body: 1.55;
+  --line-height-ui: 1.5;
+  --line-height-small: 1.35;
+
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-96: 96px;
+  --space-120: 120px;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+}
