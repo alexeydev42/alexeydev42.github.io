@@ -22,11 +22,22 @@ const contactIcons = {
 export const Hero = ({ hero, language, onToggleLanguage, navigation, contacts }: HeroProps) => {
   return (
     <header className={styles.hero}>
-      <button className={styles.languageSwitcher} type="button" onClick={onToggleLanguage}>
-        {language === 'en' ? 'RU' : 'EN'}
+      <button
+        className={styles.languageSwitcher}
+        type="button"
+        onClick={onToggleLanguage}
+        aria-label={language === 'en' ? 'Switch to Russian' : 'Переключить на английский'}
+      >
+        <span className={language === 'en' ? styles.activeLanguage : styles.inactiveLanguage}>
+          EN
+        </span>
+        <span className={styles.languageSeparator}>/</span>
+        <span className={language === 'ru' ? styles.activeLanguage : styles.inactiveLanguage}>
+          RU
+        </span>
       </button>
 
-      <div className={styles.identify}>
+      <div className={styles.identity}>
         <h1 className={styles.name}>{hero.name}</h1>
         <p className={styles.role}>{hero.role}</p>
         <p className={styles.intro}>{hero.intro}</p>

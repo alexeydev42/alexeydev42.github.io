@@ -45,7 +45,6 @@ export interface SectionTitles {
   about: string
   projects: string
   skills: string
-  contact: string
 }
 
 export interface PortfolioContent {

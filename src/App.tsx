@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { content, contacts } from './content/portfolio'
+import { content, contacts, projects, skillGroups } from './content/portfolio'
 import type { Language } from './content/types'
 import { Hero } from './components/Hero/Hero'
 
@@ -38,7 +38,41 @@ function App() {
         navigation={currentContent.navigation}
         contacts={contacts}
       />
-      <main></main>
+      <main className={styles.content}>
+        <section className={styles.about} id="about">
+          <h2>{currentContent.sectionTitles.about}</h2>
+          <div className={styles.aboutText}>
+            {currentContent.about.map((item) => (
+              <p key={item}>{item}</p>
+            ))}
+          </div>
+        </section>
+        <section id="projects">
+          <h2>{currentContent.sectionTitles.projects}</h2>
+          {projects.map((project) => (
+            <div className={styles.projectPreview} key={project.id}>
+              <h3>{project.name}</h3>
+              <p>{project.description[language]}</p>
+              <a href={project.repository} target="_blank" rel="noopener noreferrer">
+                Project code
+              </a>
+            </div>
+          ))}
+        </section>
+        <section id="skills">
+          <h2>{currentContent.sectionTitles.skills}</h2>
+
+          {skillGroups.map((group) => (
+            <div key={group.id}>
+              <h3>{group.title[language]}</h3>
+
+              {group.skills.map((skill) => (
+                <p key={skill}>{skill}</p>
+              ))}
+            </div>
+          ))}
+        </section>
+      </main>
     </div>
   )
 }

@@ -3,15 +3,16 @@
   top: var(--page-padding-block);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-48);
   align-self: start;
   min-height: calc(100svh - var(--page-padding-block) * 2);
 }
 
-@media (width <= 900px) {
+@media (width <= 1024px) {
   .hero {
     position: static;
     top: auto;
-    min-height: auto;
   }
 }
 
@@ -20,13 +21,43 @@
   font-size: var(--font-size-label);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-ui);
-  color: var(--color-text-secondary);
   letter-spacing: 0.08em;
+}
+
+.activeLanguage {
+  color: var(--color-text-primary);
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+.inactiveLanguage {
+  color: var(--color-text-secondary);
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+.languageSeparator {
+  margin: 0 var(--space-8);
+  color: var(--color-text-secondary);
+}
+
+.languageSwitcher:hover .inactiveLanguage,
+.languageSwitcher:focus-visible .inactiveLanguage {
+  color: var(--color-accent);
+  text-shadow: 0 0 10px rgb(71 209 232 / 50%);
 }
 
 .identity {
   max-width: 420px;
-  margin-top: clamp(32px, calc(5.333px + 2.963vw), 48px);
+  margin-top: clamp(32px, calc(-7.385px + 3.846vw), 48px);
+}
+
+.name {
+  font-size: clamp(2.5rem, calc(15.385px + 2.404vw), 3.125rem);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
 }
 
 .role {
@@ -49,7 +80,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-12);
-  margin-top: clamp(40px, calc(-13.333px + 5.926vw), 72px);
+  margin-top: clamp(40px, calc(-38.769px + 7.692vw), 72px);
 }
 
 .navigationLink {
@@ -65,7 +96,6 @@
   display: flex;
   align-items: center;
   gap: var(--space-20);
-  margin-top: auto;
 }
 
 .contactLink {
@@ -78,8 +108,17 @@
 .contactIcon {
   width: 24px;
   height: 24px;
+  transition:
+    color 0.2s ease,
+    filter 0.2s ease;
 }
 
-.contactLink:hover {
+.contactLink:hover,
+.contactLink:focus-visible {
   color: var(--color-accent);
+}
+
+.contactLink:hover .contactIcon,
+.contactLink:focus-visible .contactIcon {
+  filter: drop-shadow(0 0 6px rgb(71 209 232 / 55%));
 }
