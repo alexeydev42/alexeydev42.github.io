@@ -1,6 +1,6 @@
 export type Language = 'en' | 'ru'
 
-export type SectionId = 'about' | 'projects' | 'skills' | 'contact'
+export type SectionId = 'about' | 'projects' | 'skills'
 
 export interface LocalizedText {
   en: string

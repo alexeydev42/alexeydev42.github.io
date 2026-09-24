@@ -14,7 +14,7 @@
 @media (width <= 1024px) {
   .page {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: var(--space-64);
   }
 }
 
@@ -25,15 +25,23 @@
   min-width: 0;
 }
 
-.content h2 {
-  margin-bottom: var(--space-24);
-  font-size: var(--font-size-title);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-heading);
-  color: var(--color-text-primary);
+.content > section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
 }
 
-.content p {
+.sectionTitle {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-ui);
+  color: var(--color-text-primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.aboutParagraph {
+  font-size: var(--font-size-body);
   line-height: var(--line-height-body);
   color: var(--color-text-secondary);
 }
@@ -48,10 +56,14 @@
   gap: var(--space-16);
 }
 
-.content [id='projects'] > div + div {
-  margin-top: var(--space-32);
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
 }
 
-.projectPreview + .projectPreview {
-  margin-top: var(--space-32);
+.skillGroups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
 }

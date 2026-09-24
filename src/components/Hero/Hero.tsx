@@ -1,4 +1,4 @@
-import type { HeroContent, Language, NavItem, Contact } from '../../content/types'
+import type { Contact, HeroContent, Language, NavItem } from '../../content/types'
 import GithubIcon from '../../assets/icons/github.svg?react'
 import TelegramIcon from '../../assets/icons/telegram.svg?react'
 import EmailIcon from '../../assets/icons/email.svg?react'
@@ -22,33 +22,38 @@ const contactIcons = {
 export const Hero = ({ hero, language, onToggleLanguage, navigation, contacts }: HeroProps) => {
   return (
     <header className={styles.hero}>
-      <button
-        className={styles.languageSwitcher}
-        type="button"
-        onClick={onToggleLanguage}
-        aria-label={language === 'en' ? 'Switch to Russian' : 'Переключить на английский'}
-      >
-        <span className={language === 'en' ? styles.activeLanguage : styles.inactiveLanguage}>
-          EN
-        </span>
-        <span className={styles.languageSeparator}>/</span>
-        <span className={language === 'ru' ? styles.activeLanguage : styles.inactiveLanguage}>
-          RU
-        </span>
-      </button>
+      <div className={styles.heroTop}>
+        <button
+          className={styles.languageSwitcher}
+          type="button"
+          onClick={onToggleLanguage}
+          aria-label={language === 'en' ? 'Switch to Russian' : 'Переключить на английский'}
+        >
+          <span className={language === 'en' ? styles.activeLanguage : styles.inactiveLanguage}>
+            EN
+          </span>
+          <span className={styles.languageSeparator}>/</span>
+          <span className={language === 'ru' ? styles.activeLanguage : styles.inactiveLanguage}>
+            RU
+          </span>
+        </button>
 
-      <div className={styles.identity}>
-        <h1 className={styles.name}>{hero.name}</h1>
-        <p className={styles.role}>{hero.role}</p>
-        <p className={styles.intro}>{hero.intro}</p>
+        <div className={styles.heroBody}>
+          <div className={styles.identity}>
+            <h1 className={styles.name}>{hero.name}</h1>
+            <p className={styles.role}>{hero.role}</p>
+            <p className={styles.intro}>{hero.intro}</p>
+          </div>
+
+          <nav className={styles.navigation}>
+            {navigation.map((item) => (
+              <a className={styles.navigationLink} key={item.id} href={`#${item.id}`}>
+                {item.title}
+              </a>
+            ))}
+          </nav>
+        </div>
       </div>
-      <nav className={styles.navigation}>
-        {navigation.map((item) => (
-          <a className={styles.navigationLink} key={item.id} href={`#${item.id}`}>
-            {item.title}
-          </a>
-        ))}
-      </nav>
 
       <ul className={styles.contacts}>
         {contacts.map((contact) => {

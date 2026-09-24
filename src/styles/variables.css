@@ -1,14 +1,14 @@
 :root {
   /* Colors */
-  --color-background: #090e16;
+  --color-background: #0d1624;
   --color-text-primary: #e3f0fa;
-  --color-text-secondary: #7a94ab;
+  --color-text-secondary: #8aa0b5;
   --color-accent: #47d1e8;
-  --color-surface: rgb(18 28 41 / 62%);
-  --color-surface-hover: rgb(18 28 41 / 82%);
-  --color-border: rgb(36 56 77 / 65%);
-  --color-border-hover: rgb(71 209 232 / 28%);
-  --color-spotlight: rgb(15 56 87 / 34%);
+  --color-surface: rgb(24 37 54 / 72%);
+  --color-surface-hover: rgb(28 44 63 / 86%);
+  --color-border: rgb(73 98 124 / 48%);
+  --color-border-hover: rgb(71 209 232 / 32%);
+  --color-spotlight: rgb(29 78 112 / 38%);
 
   /* Typography */
   --font-family-base: 'Manrope', sans-serif;
