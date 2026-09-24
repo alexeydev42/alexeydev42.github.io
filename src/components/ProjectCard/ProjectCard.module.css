@@ -96,12 +96,6 @@
   white-space: nowrap;
 }
 
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-16);
-}
-
 .projectLink {
   font-size: var(--font-size-body-small);
   font-weight: var(--font-weight-semibold);
