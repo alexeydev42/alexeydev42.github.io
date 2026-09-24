@@ -2,8 +2,12 @@ import { useEffect, useState } from 'react'
 import { content, contacts, projects, skillGroups } from './content/portfolio'
 import type { Language } from './content/types'
 import { Hero } from './components/Hero/Hero'
+import { About } from './components/About/About'
+import { Projects } from './components/Projects/Projects'
+import { Skills } from './components/Skills/Skills'
 
 import styles from './App.module.css'
+
 
 const LANGUAGE_STORAGE_KEY = 'portfolio-language'
 
@@ -40,58 +44,11 @@ function App() {
       />
 
       <main className={styles.content}>
-        <section className={styles.about} id="about">
-          <h2 className={styles.sectionTitle}>{currentContent.sectionTitles.about}</h2>
+        <About title={currentContent.sectionTitles.about} paragraphs={currentContent.about} />
 
-          <div className={styles.aboutText}>
-            {currentContent.about.map((item) => (
-              <p className={styles.aboutParagraph} key={item}>
-                {item}
-              </p>
-            ))}
-          </div>
-        </section>
+        <Projects title={currentContent.sectionTitles.projects} projects={projects} language={language} />
 
-        <section id="projects">
-          <h2 className={styles.sectionTitle}>{currentContent.sectionTitles.projects}</h2>
-
-          <div className={styles.projectList}>
-            {projects.map((project) => (
-              <article className={styles.projectPreview} key={project.id}>
-                <h3 className={styles.projectTitle}>{project.name}</h3>
-
-                <p className={styles.projectDescription}>{project.description[language]}</p>
-
-                <a
-                  className={styles.projectLink}
-                  href={project.repository}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Project code
-                </a>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="skills">
-          <h2 className={styles.sectionTitle}>{currentContent.sectionTitles.skills}</h2>
-
-          <div className={styles.skillGroups}>
-            {skillGroups.map((group) => (
-              <div key={group.id}>
-                <h3 className={styles.skillGroupTitle}>{group.title[language]}</h3>
-
-                {group.skills.map((skill) => (
-                  <p className={styles.skillItem} key={skill}>
-                    {skill}
-                  </p>
-                ))}
-              </div>
-            ))}
-          </div>
-        </section>
+        <Skills title={currentContent.sectionTitles.projects} skillGroups={skillGroups} language={language}/>
       </main>
     </div>
   )

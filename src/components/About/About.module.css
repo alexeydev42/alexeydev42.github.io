@@ -1,0 +1,15 @@
+.about {
+  max-width: 640px;
+}
+
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.aboutParagraph {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text-secondary);
+}
