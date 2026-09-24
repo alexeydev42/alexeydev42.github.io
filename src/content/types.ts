@@ -1,6 +1,6 @@
 export type Language = 'en' | 'ru'
 
-export type SectionId = 'about' | 'projects' | 'skills' | 'contact'
+export type SectionId = 'about' | 'projects' | 'skills'
 
 export interface LocalizedText {
   en: string
@@ -28,9 +28,9 @@ export interface SkillGroup {
   skills: string[]
 }
 
+export type ContactId = 'github' | 'telegram' | 'email'
 export interface Contact {
-  id: string
-  icon: string
+  id: ContactId
   url: string
   label: string
 }
@@ -45,7 +45,6 @@ export interface SectionTitles {
   about: string
   projects: string
   skills: string
-  contact: string
 }
 
 export interface PortfolioContent {

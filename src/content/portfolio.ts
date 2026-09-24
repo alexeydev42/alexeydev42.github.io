@@ -12,7 +12,6 @@ export const content: Record<Language, PortfolioContent> = {
       { id: 'about', title: 'About' },
       { id: 'projects', title: 'Projects' },
       { id: 'skills', title: 'Skills' },
-      { id: 'contact', title: 'Contact' },
     ],
     about: [
       'I am a frontend developer focused on React and TypeScript. I recently completed the Frontend Developer program at Yandex Practicum, where I worked on individual projects and took part in building SkillSwap as a team project.',
@@ -23,7 +22,6 @@ export const content: Record<Language, PortfolioContent> = {
       about: 'About',
       projects: 'Projects',
       skills: 'Skills',
-      contact: 'Contact',
     },
     footer:
       'Designed in Figma and built in Visual Studio Code with React, TypeScript, Vite and CSS Modules. Deployed on GitHub Pages. The source code is available on GitHub.',
@@ -39,7 +37,6 @@ export const content: Record<Language, PortfolioContent> = {
       { id: 'about', title: 'Обо мне' },
       { id: 'projects', title: 'Проекты' },
       { id: 'skills', title: 'Навыки' },
-      { id: 'contact', title: 'Контакты' },
     ],
     about: [
       'Я frontend-разработчик, сейчас основной фокус у меня на React и TypeScript. Недавно я закончил курс Frontend Developer в Яндекс Практикуме, где делал самостоятельные учебные проекты и участвовал в командной разработке SkillSwap.',
@@ -50,7 +47,6 @@ export const content: Record<Language, PortfolioContent> = {
       about: 'Обо мне',
       projects: 'Проекты',
       skills: 'Навыки',
-      contact: 'Контакты',
     },
     footer:
       'Макет сделан в Figma, сайт написан в Visual Studio Code на React и TypeScript с Vite и CSS Modules и опубликован на GitHub Pages. Исходный код доступен на GitHub.',
@@ -136,19 +132,16 @@ export const skillGroups: SkillGroup[] = [
 export const contacts: Contact[] = [
   {
     id: 'github',
-    icon: '/icons/github.svg',
     url: 'https://github.com/alexeydev42',
     label: 'GitHub',
   },
   {
     id: 'telegram',
-    icon: '/icons/telegram.svg',
     url: 'https://t.me/alexeydev42',
     label: 'Telegram',
   },
   {
     id: 'email',
-    icon: '/icons/email.svg',
     url: 'mailto:alexey.dev42@gmail.com',
     label: 'Email',
   },

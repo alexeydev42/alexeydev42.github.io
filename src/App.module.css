@@ -1,0 +1,69 @@
+.page {
+  --page-padding-block: clamp(48px, calc(37.333px + 2.963vw), 80px);
+  --page-padding-inline: clamp(32px, calc(2.667px + 8.148vw), 120px);
+  --page-gap: clamp(40px, calc(-58.462px + 9.615vw), 80px);
+
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  gap: var(--page-gap);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--page-padding-block) var(--page-padding-inline);
+}
+
+@media (width <= 1024px) {
+  .page {
+    grid-template-columns: 1fr;
+    gap: var(--space-64);
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(80px, calc(-18.462px + 9.615vw), 120px);
+  min-width: 0;
+}
+
+.content > section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-ui);
+  color: var(--color-text-primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.aboutParagraph {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text-secondary);
+}
+
+.about {
+  max-width: 640px;
+}
+
+.aboutText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.skillGroups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
