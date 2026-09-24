@@ -14,17 +14,21 @@ export const Skills = ({ title, skillGroups, language }: SkillsProps) => {
     <section className={styles.skills} id="skills">
       <SectionTitle title={title} />
 
-      <div className={styles.skillGroups}>
+      <ul className={styles.skillGroups}>
         {skillGroups.map((group) => (
-          <div key={group.id}>
-            <h3>{group.title[language]}</h3>
+          <li className={styles.skillGroup} key={group.id}>
+            <h3 className={styles.groupTitle}>{group.title[language]}</h3>
 
-            {group.skills.map((skill) => (
-              <p key={skill}>{skill}</p>
-            ))}
-          </div>
+            <ul className={styles.skillList}>
+              {group.skills.map((skill) => (
+                <li className={styles.skillItem} key={skill}>
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   )
 }

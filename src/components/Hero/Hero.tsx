@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import type { Contact, HeroContent, Language, NavItem } from '../../content/types'
 import GithubIcon from '../../assets/icons/github.svg?react'
 import TelegramIcon from '../../assets/icons/telegram.svg?react'
@@ -20,6 +21,31 @@ const contactIcons = {
 }
 
 export const Hero = ({ hero, language, onToggleLanguage, navigation, contacts }: HeroProps) => {
+  const [activeSection, setActiveSection] = useState(navigation[0].id)
+
+  useEffect(() => {
+    const sections = navigation
+      .map((item) => document.getElementById(item.id))
+      .filter((section): section is HTMLElement => section !== null)
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries.find((entry) => entry.isIntersecting)
+
+        if (visibleSection) {
+          setActiveSection(visibleSection.target.id as NavItem['id'])
+        }
+      },
+      {
+        rootMargin: '-20% 0px -70% 0px',
+      },
+    )
+
+    sections.forEach((section) => observer.observe(section))
+
+    return () => observer.disconnect()
+  }, [navigation])
+
   return (
     <header className={styles.hero}>
       <div className={styles.heroTop}>
@@ -47,7 +73,13 @@ export const Hero = ({ hero, language, onToggleLanguage, navigation, contacts }:
 
           <nav className={styles.navigation}>
             {navigation.map((item) => (
-              <a className={styles.navigationLink} key={item.id} href={`#${item.id}`}>
+              <a
+                className={`${styles.navigationLink} ${
+                  item.id === activeSection ? styles.navigationLinkActive : ''
+                }`}
+                key={item.id}
+                href={`#${item.id}`}
+              >
                 {item.title}
               </a>
             ))}

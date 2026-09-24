@@ -37,18 +37,16 @@ export const ProjectCard = ({ project, language }: ProjectCardProps) => {
           ))}
         </ul>
 
-        <div className={styles.links}>
-          {project.demo && (
-            <a
-              className={styles.projectLink}
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live demo
-            </a>
-          )}
-        </div>
+        {project.demo && (
+          <a
+            className={styles.projectLink}
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live demo
+          </a>
+        )}
       </div>
 
       <div className={styles.preview}>
