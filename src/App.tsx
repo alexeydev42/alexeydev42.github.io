@@ -8,7 +8,6 @@ import { Skills } from './components/Skills/Skills'
 
 import styles from './App.module.css'
 
-
 const LANGUAGE_STORAGE_KEY = 'portfolio-language'
 
 function App() {
@@ -46,9 +45,17 @@ function App() {
       <main className={styles.content}>
         <About title={currentContent.sectionTitles.about} paragraphs={currentContent.about} />
 
-        <Projects title={currentContent.sectionTitles.projects} projects={projects} language={language} />
+        <Projects
+          title={currentContent.sectionTitles.projects}
+          projects={projects}
+          language={language}
+        />
 
-        <Skills title={currentContent.sectionTitles.projects} skillGroups={skillGroups} language={language}/>
+        <Skills
+          title={currentContent.sectionTitles.skills}
+          skillGroups={skillGroups}
+          language={language}
+        />
       </main>
     </div>
   )

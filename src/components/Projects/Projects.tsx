@@ -1,4 +1,5 @@
 import type { Language, Project } from '../../content/types'
+import { ProjectCard } from '../ProjectCard/ProjectCard'
 import { SectionTitle } from '../SectionTitle/SectionTitle'
 
 import styles from './Projects.module.css'
@@ -11,25 +12,12 @@ interface ProjectsProps {
 
 export const Projects = ({ title, projects, language }: ProjectsProps) => {
   return (
-    <section id="projects">
+    <section className={styles.projects} id="projects">
       <SectionTitle title={title} />
 
       <div className={styles.projectList}>
         {projects.map((project) => (
-          <article className={styles.projectPreview} key={project.id}>
-            <h3 className={styles.projectTitle}>{project.name}</h3>
-
-            <p className={styles.projectDescription}>{project.description[language]}</p>
-
-            <a
-              className={styles.projectLink}
-              href={project.repository}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Project code
-            </a>
-          </article>
+          <ProjectCard key={project.id} project={project} language={language} />
         ))}
       </div>
     </section>
