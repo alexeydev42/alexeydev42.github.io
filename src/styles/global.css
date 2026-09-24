@@ -45,12 +45,7 @@ ol {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -59,4 +54,24 @@ button {
   color: inherit;
   background: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  border-radius: 4px;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  a:focus {
+    color: var(--color-accent);
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }

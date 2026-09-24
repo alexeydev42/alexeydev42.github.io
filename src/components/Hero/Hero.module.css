@@ -87,12 +87,42 @@
 }
 
 .navigationLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
   font-size: var(--font-size-label);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-ui);
   color: var(--color-text-secondary);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.navigationLink::before {
+  width: 32px;
+  height: 1px;
+  background-color: currentcolor;
+  content: '';
+  transition: width 0.2s ease;
+}
+
+.navigationLinkActive {
+  color: var(--color-text-primary);
+}
+
+.navigationLinkActive::before {
+  width: 64px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navigationLink:hover {
+    color: var(--color-text-primary);
+  }
+
+  .navigationLink:hover::before {
+    width: 64px;
+  }
 }
 
 .contacts {
