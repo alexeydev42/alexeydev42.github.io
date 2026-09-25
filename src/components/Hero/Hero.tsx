@@ -28,22 +28,56 @@ export const Hero = ({ hero, language, onToggleLanguage, navigation, contacts }:
       .map((item) => document.getElementById(item.id))
       .filter((section): section is HTMLElement => section !== null)
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSection = entries.find((entry) => entry.isIntersecting)
+    if (sections.length === 0) {
+      return
+    }
 
-        if (visibleSection) {
-          setActiveSection(visibleSection.target.id as NavItem['id'])
+    const lastSection = sections[sections.length - 1]
+    const lastSectionId = navigation[navigation.length - 1].id
+
+    const updateActiveSection = () => {
+      const isAtPageBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2
+
+      // The last section may be too short to reach the regular activation line.
+      // At the bottom of the page, always treat it as active.
+      if (isAtPageBottom) {
+        setActiveSection(lastSectionId)
+        return
+      }
+
+      const activationLine = window.innerHeight * 0.25
+      const lastSectionActivationLine = window.innerHeight * 0.6
+
+      // The last section gets a lower activation line because there may not be
+      // enough content below it to move it into the regular activation area.
+      if (lastSection.getBoundingClientRect().top <= lastSectionActivationLine) {
+        setActiveSection(lastSectionId)
+        return
+      }
+
+      let currentSection = sections[0]
+
+      // For regular sections, use the last section whose top has crossed
+      // the activation line.
+      sections.forEach((section) => {
+        if (section.getBoundingClientRect().top <= activationLine) {
+          currentSection = section
         }
-      },
-      {
-        rootMargin: '-20% 0px -70% 0px',
-      },
-    )
+      })
 
-    sections.forEach((section) => observer.observe(section))
+      setActiveSection(currentSection.id as NavItem['id'])
+    }
 
-    return () => observer.disconnect()
+    updateActiveSection()
+
+    window.addEventListener('scroll', updateActiveSection, { passive: true })
+    window.addEventListener('resize', updateActiveSection)
+
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection)
+      window.removeEventListener('resize', updateActiveSection)
+    }
   }, [navigation])
 
   return (

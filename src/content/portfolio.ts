@@ -6,7 +6,7 @@ export const content: Record<Language, PortfolioContent> = {
       name: 'Alexey Surkov',
       role: 'Frontend Developer',
       intro:
-        'I build web interfaces, learn by doing, and like understanding how things work under the hood, not just how they look on the screen.',
+        'I build web interfaces, learn by doing, and try to understand how things work under the hood, not just how they look on screen.',
     },
     navigation: [
       { id: 'about', title: 'About' },
@@ -14,9 +14,9 @@ export const content: Record<Language, PortfolioContent> = {
       { id: 'skills', title: 'Skills' },
     ],
     about: [
-      'I am a frontend developer focused on React and TypeScript. I recently completed the Frontend Developer program at Yandex Practicum, where I worked on individual projects and took part in building SkillSwap as a team project.',
-      'After the course, I kept working on the projects instead of leaving them in their final training state: cleaning things up, fixing responsive behavior, improving deployment and revisiting decisions that I wanted to understand better.',
-      'Before moving into frontend development, I spent several years working with motion graphics. It is not my main specialization now, but that experience made me pay attention to rhythm, motion and small visual details in interfaces.',
+      'I’m a frontend developer, mainly working with React and TypeScript. I completed the Frontend Developer course at Yandex Practicum, where I built individual projects and worked with a team on SkillSwap, which is featured here.',
+      'After the course, I improved my course projects and then started working on projects of my own to strengthen my React and TypeScript skills, get a deeper understanding of application architecture, and learn new things through practice.',
+      'Before frontend development, I spent several years working in motion design. It’s not my main focus now, but that experience taught me to pay attention to rhythm, motion and visual details in interfaces.',
     ],
     sectionTitles: {
       about: 'About',
@@ -78,9 +78,9 @@ export const content: Record<Language, PortfolioContent> = {
   ru: {
     hero: {
       name: 'Алексей Сурков',
-      role: 'Frontend Developer',
+      role: 'Фронтенд-разработчик',
       intro:
-        'Делаю веб-интерфейсы, учусь на практике и стараюсь понимать не только как они выглядят, но и как всё работает внутри.',
+        'Создаю веб-интерфейсы, учусь на практике и стараюсь понимать, как всё работает внутри, а не только как выглядит на экране.',
     },
     navigation: [
       { id: 'about', title: 'Обо мне' },
@@ -88,9 +88,9 @@ export const content: Record<Language, PortfolioContent> = {
       { id: 'skills', title: 'Навыки' },
     ],
     about: [
-      'Я frontend-разработчик, сейчас основной фокус у меня на React и TypeScript. Недавно я закончил курс Frontend Developer в Яндекс Практикуме, где делал самостоятельные учебные проекты и участвовал в командной разработке SkillSwap.',
-      'После курса я не стал оставлять проекты в состоянии, в котором они были сданы: продолжаю приводить их в порядок, исправлять адаптив, настраивать деплой и возвращаться к решениям, которые хочу лучше понять.',
-      'До frontend-разработки несколько лет занимался моушн-графикой. Сейчас это не моя основная специализация, но этот опыт приучил меня обращать внимание на ритм, движение и небольшие визуальные детали интерфейса.',
+      'Я фронтенд-разработчик, в основном работаю с React и TypeScript. Закончил курс "Фронтенд-разработчик" в Яндекс Практикуме, где в процессе обучения делал самостоятельные проекты и участвовал в командной разработке проекта SkillSwap, который представлен здесь.',
+      'После курса я доработал учебные проекты, а затем начал работать над собственными, чтобы закреплять React и TypeScript, глубже разбираться в архитектуре приложений и осваивать новые для себя вещи на практике.',
+      'До фронтенда я несколько лет занимался моушн-дизайном. Сейчас это не основное направление, но этот опыт приучил меня обращать внимание на ритм, движение и визуальные детали интерфейса.',
     ],
     sectionTitles: {
       about: 'Обо мне',
@@ -157,8 +157,8 @@ export const projects: Project[] = [
     name: 'SkillSwap',
     image: '/images/projects/skill-swap.webp',
     description: {
-      en: 'A React application for exchanging skills between users. I worked on the project as part of a team, contributing UI components and application logic. After the team stage was finished, I continued developing my own version, including responsive improvements, deployment fixes and general project cleanup.',
-      ru: 'React-приложение для обмена навыками между пользователями. Я работал над проектом в составе команды, участвовал в разработке UI-компонентов и логики приложения. После завершения командного этапа продолжил развивать свою версию проекта: доработал адаптив, исправил проблемы с деплоем и привёл проект в более законченное состояние.',
+      en: 'A React app for exchanging skills between users. I worked on it as part of a team, building UI components and application logic. After the team project ended, I continued developing my own version: improving responsiveness, fixing deployment issues and cleaning up the project.',
+      ru: 'React-приложение для обмена навыками между пользователями. Я работал над ним в составе команды, делал UI-компоненты и логику приложения. После завершения командного этапа продолжил развивать свою версию: доработал адаптив, исправил проблемы с деплоем и привёл проект в порядок.',
     },
     technologies: ['React', 'TypeScript', 'Redux Toolkit', 'React Router', 'CSS Modules'],
     repository: 'https://github.com/alexeydev42/SkillSwap_55_3',
@@ -169,8 +169,8 @@ export const projects: Project[] = [
     name: 'To Do React',
     image: '/images/projects/todo-react.webp',
     description: {
-      en: 'A small React task manager I developed while learning React and then continued refining independently. It includes task state management with useReducer and Context, search, statistics, theme switching, local persistence and custom hooks.',
-      ru: 'Небольшой React-менеджер задач, который я делал во время изучения React и затем продолжил дорабатывать самостоятельно. В проекте есть управление состоянием через useReducer и Context, поиск, статистика, переключение темы, сохранение данных и custom hooks.',
+      en: 'A small React task manager that started as a learning project and that I later continued developing on my own. It includes state management with useReducer and Context, search, completed task counters, theme switching, local persistence and custom hooks.',
+      ru: 'Небольшой менеджер задач на React. Начал его во время изучения React и потом продолжил дорабатывать самостоятельно. В проекте есть управление состоянием через useReducer и Context, поиск, счётчик выполненных задач, переключение темы, сохранение данных и кастомные хуки.',
     },
     technologies: ['React', 'JavaScript', 'Context API', 'useReducer', 'SCSS Modules', 'Vite'],
     repository: 'https://github.com/alexeydev42/todo-react',
@@ -181,8 +181,8 @@ export const projects: Project[] = [
     name: 'Stellar Burgers',
     image: '/images/projects/stellar-burgers.webp',
     description: {
-      en: 'A React and TypeScript application for building burgers, placing orders and working with a live order feed. The visual foundation was provided as part of the course project. My work focused on the application layer: Redux state management, routing, authentication, API integration, protected routes and automated tests.',
-      ru: 'React и TypeScript приложение для сборки бургеров, оформления заказов и работы с лентой заказов. Визуальная основа была предоставлена в рамках учебного проекта. Моя работа была сосредоточена на логике приложения: Redux, routing, authentication, API, protected routes и automated tests.',
+      en: 'A React and TypeScript app for building burgers, placing orders and working with a live order feed. The visual foundation was provided as part of the course project, while my work focused on the application logic: Redux state management, routing, authentication, API integration, protected routes and automated tests.',
+      ru: 'Приложение на React и TypeScript для сборки бургеров, оформления заказов и работы с лентой заказов. Визуальная основа была предоставлена в рамках учебного проекта, а моя работа была сосредоточена на логике приложения: Redux, маршрутизации, авторизации, работе с API, защищённых маршрутах и автотестах.',
     },
     technologies: ['React', 'TypeScript', 'Redux Toolkit', 'React Router', 'Jest', 'Playwright'],
     repository: 'https://github.com/alexeydev42/stellar-burgers',
@@ -192,8 +192,8 @@ export const projects: Project[] = [
     name: 'WebLarek',
     image: '/images/projects/weblarek.webp',
     description: {
-      en: 'A TypeScript e-commerce application with a product catalog, cart and checkout flow. The project focuses on application architecture. I implemented models for application data, reusable view classes, form logic, API interaction and event-driven coordination between different parts of the interface.',
-      ru: 'TypeScript-приложение интернет-магазина с каталогом, корзиной и оформлением заказа. Основной акцент проекта сделан на архитектуре. Я реализовал модели данных, переиспользуемые view-классы, логику форм, работу с API и взаимодействие частей интерфейса через события.',
+      en: 'A TypeScript e-commerce app with a product catalog, cart and checkout flow. The main focus of the project was application architecture. I implemented data models, reusable view classes, form logic, API interaction and event-based communication between different parts of the interface.',
+      ru: 'TypeScript-приложение интернет-магазина с каталогом, корзиной и оформлением заказа. Основной акцент был на архитектуре приложения. Я реализовал модели данных, переиспользуемые view-классы, логику форм, работу с API и взаимодействие частей интерфейса через события.',
     },
     technologies: ['TypeScript', 'HTML', 'SCSS', 'REST API', 'Vite'],
     repository: 'https://github.com/alexeydev42/weblarek',
@@ -205,7 +205,7 @@ export const skillGroups: SkillGroup[] = [
     id: 'frontend',
     title: {
       en: 'Frontend',
-      ru: 'Frontend',
+      ru: 'Фронтенд',
     },
     skills: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS'],
   },
@@ -213,7 +213,7 @@ export const skillGroups: SkillGroup[] = [
     id: 'state-routing',
     title: {
       en: 'State & Routing',
-      ru: 'State & Routing',
+      ru: 'Состояние и маршрутизация',
     },
     skills: ['Redux Toolkit', 'React Router', 'Context API'],
   },

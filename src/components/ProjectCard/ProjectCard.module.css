@@ -178,10 +178,13 @@
 }
 
 @media (width <= 1024px) {
-  .card {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'content'
-      'preview';
+  @media (width <= 1024px) {
+    .card {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'content'
+        'preview';
+      padding-inline: 0;
+    }
   }
 }

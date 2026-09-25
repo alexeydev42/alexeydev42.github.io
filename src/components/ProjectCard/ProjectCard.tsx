@@ -44,7 +44,7 @@ export const ProjectCard = ({ project, language }: ProjectCardProps) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Live demo
+            {language === 'en' ? 'Live demo' : 'Демо'}
           </a>
         )}
       </div>
