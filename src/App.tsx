@@ -7,6 +7,7 @@ import { Projects } from './components/Projects/Projects'
 import { Skills } from './components/Skills/Skills'
 
 import styles from './App.module.css'
+import { Footer } from './components/Footer/Footer'
 
 const LANGUAGE_STORAGE_KEY = 'portfolio-language'
 
@@ -56,6 +57,7 @@ function App() {
           skillGroups={skillGroups}
           language={language}
         />
+        <Footer content={currentContent.footer} />
       </main>
     </div>
   )
