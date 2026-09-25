@@ -23,8 +23,57 @@ export const content: Record<Language, PortfolioContent> = {
       projects: 'Projects',
       skills: 'Skills',
     },
-    footer:
-      'Designed in Figma and built in Visual Studio Code with React, TypeScript, Vite and CSS Modules. Deployed on GitHub Pages. The source code is available on GitHub.',
+    footer: [
+      { id: 'design-intro', text: 'Designed in ' },
+      {
+        id: 'figma',
+        text: 'Figma',
+        href: 'https://www.figma.com/',
+      },
+      { id: 'editor-intro', text: ' and coded in ' },
+      {
+        id: 'vscode',
+        text: 'Visual Studio Code',
+        href: 'https://code.visualstudio.com/',
+      },
+      { id: 'stack-intro', text: '. Built with ' },
+      {
+        id: 'react',
+        text: 'React',
+        href: 'https://react.dev/',
+      },
+      { id: 'typescript-separator', text: ', ' },
+      {
+        id: 'typescript',
+        text: 'TypeScript',
+        href: 'https://www.typescriptlang.org/',
+      },
+      { id: 'vite-separator', text: ', ' },
+      {
+        id: 'vite',
+        text: 'Vite',
+        href: 'https://vite.dev/',
+      },
+      { id: 'css-modules-separator', text: ' and ' },
+      {
+        id: 'css-modules',
+        text: 'CSS Modules',
+        href: 'https://github.com/css-modules/css-modules',
+      },
+      { id: 'deploy-intro', text: '. Deployed on ' },
+      {
+        id: 'github-pages',
+        text: 'GitHub Pages',
+        href: 'https://pages.github.com/',
+      },
+      { id: 'source-intro', text: '. Source code is available on ' },
+      {
+        id: 'github-source',
+        text: 'GitHub',
+        href: 'https://github.com/alexeydev42/alexeydev42.github.io',
+      },
+      { id: 'footer-period', text: '.' },
+    ],
   },
   ru: {
     hero: {
@@ -48,8 +97,57 @@ export const content: Record<Language, PortfolioContent> = {
       projects: 'Проекты',
       skills: 'Навыки',
     },
-    footer:
-      'Макет сделан в Figma, сайт написан в Visual Studio Code на React и TypeScript с Vite и CSS Modules и опубликован на GitHub Pages. Исходный код доступен на GitHub.',
+    footer: [
+      { id: 'design-intro', text: 'Макет сделан в ' },
+      {
+        id: 'figma',
+        text: 'Figma',
+        href: 'https://www.figma.com/',
+      },
+      { id: 'editor-intro', text: ', код написан в ' },
+      {
+        id: 'vscode',
+        text: 'Visual Studio Code',
+        href: 'https://code.visualstudio.com/',
+      },
+      { id: 'stack-intro', text: '. Сайт собран на ' },
+      {
+        id: 'react',
+        text: 'React',
+        href: 'https://react.dev/',
+      },
+      { id: 'typescript-separator', text: ' и ' },
+      {
+        id: 'typescript',
+        text: 'TypeScript',
+        href: 'https://www.typescriptlang.org/',
+      },
+      { id: 'vite-separator', text: ' с ' },
+      {
+        id: 'vite',
+        text: 'Vite',
+        href: 'https://vite.dev/',
+      },
+      { id: 'css-modules-separator', text: ' и ' },
+      {
+        id: 'css-modules',
+        text: 'CSS Modules',
+        href: 'https://github.com/css-modules/css-modules',
+      },
+      { id: 'deploy-intro', text: '. Опубликован на ' },
+      {
+        id: 'github-pages',
+        text: 'GitHub Pages',
+        href: 'https://pages.github.com/',
+      },
+      { id: 'source-intro', text: '. Исходный код доступен на ' },
+      {
+        id: 'github-source',
+        text: 'GitHub',
+        href: 'https://github.com/alexeydev42/alexeydev42.github.io',
+      },
+      { id: 'footer-period', text: '.' },
+    ],
   },
 }
 

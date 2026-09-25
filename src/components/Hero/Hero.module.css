@@ -54,6 +54,13 @@
   text-shadow: 0 0 10px rgb(71 209 232 / 50%);
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .languageSwitcher:focus .inactiveLanguage {
+    color: var(--color-text-secondary);
+    text-shadow: none;
+  }
+}
+
 .identity {
   max-width: 420px;
 }

@@ -47,10 +47,16 @@ export interface SectionTitles {
   skills: string
 }
 
+export interface FooterPart {
+  id: string
+  text: string
+  href?: string
+}
+
 export interface PortfolioContent {
   hero: HeroContent
   navigation: NavItem[]
   about: string[]
   sectionTitles: SectionTitles
-  footer: string
+  footer: FooterPart[]
 }
