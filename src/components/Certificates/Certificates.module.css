@@ -17,7 +17,12 @@
   gap: var(--space-24);
   padding: var(--space-20);
   border-radius: var(--radius-md);
-  outline: 1px solid var(--color-border);
+  background-color: transparent;
+  outline: 1px solid transparent;
+  transition:
+    background-color 0.2s ease,
+    outline-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .certificateInfo {
@@ -50,14 +55,11 @@
     text-shadow 0.2s ease;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .viewButton:hover {
-    color: var(--color-accent);
-    text-shadow: 0 0 8px rgb(71 209 232 / 35%);
-  }
-}
-
 @media (width <= 600px) {
+  .certificates {
+    gap: var(--space-24);
+  }
+
   .certificate {
     align-items: center;
     flex-direction: column;
@@ -149,7 +151,35 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .viewButton:hover,
+  .viewButton:focus-visible {
+    color: var(--color-accent);
+    text-shadow: 0 0 8px rgb(71 209 232 / 35%);
+  }
+
+  .certificate:hover {
+    background-color: var(--color-surface);
+    outline-color: rgb(71 209 232 / 15%);
+    box-shadow: -2px 4px 10px rgb(0 0 0 / 22%);
+  }
+
   .closeButton:hover {
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 6px rgb(71 209 232 / 45%));
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .certificate {
+    outline-color: rgb(71 209 232 / 15%);
+  }
+
+  .viewButton:focus {
+    color: var(--color-accent);
+    text-shadow: 0 0 8px rgb(71 209 232 / 35%);
+  }
+
+  .closeButton:active {
     color: var(--color-accent);
     filter: drop-shadow(0 0 6px rgb(71 209 232 / 45%));
   }

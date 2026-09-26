@@ -34,8 +34,22 @@ function App() {
 
   const currentContent = content[language]
 
+  useEffect(() => {
+    const handlePointerMove = (event: PointerEvent) => {
+      document.documentElement.style.setProperty('--pointer-x', `${event.clientX}px`)
+      document.documentElement.style.setProperty('--pointer-y', `${event.clientY}px`)
+    }
+
+    window.addEventListener('pointermove', handlePointerMove)
+
+    return () => {
+      window.removeEventListener('pointermove', handlePointerMove)
+    }
+  }, [])
+
   return (
     <div className={styles.page}>
+      <div className={styles.spotlight} />
       <Hero
         hero={currentContent.hero}
         language={language}

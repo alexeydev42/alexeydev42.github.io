@@ -24,3 +24,29 @@
   gap: clamp(80px, calc(-18.462px + 9.615vw), 120px);
   min-width: 0;
 }
+
+.spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .spotlight {
+    background: radial-gradient(
+      600px at var(--pointer-x) var(--pointer-y),
+      var(--color-spotlight),
+      transparent 80%
+    );
+  }
+}
+
+/* @media (hover: none) and (pointer: coarse) {
+  .spotlight {
+    background: radial-gradient(
+      600px at 100% 50%,
+      var(--color-spotlight),
+      transparent 80%
+    );
+  }
+} */
