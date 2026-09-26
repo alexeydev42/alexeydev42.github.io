@@ -1,6 +1,6 @@
 export type Language = 'en' | 'ru'
 
-export type SectionId = 'about' | 'projects' | 'skills'
+export type SectionId = 'about' | 'projects' | 'skills' | 'certificates'
 
 export interface LocalizedText {
   en: string
@@ -45,6 +45,7 @@ export interface SectionTitles {
   about: string
   projects: string
   skills: string
+  certificates: string
 }
 
 export interface FooterPart {
@@ -59,4 +60,13 @@ export interface PortfolioContent {
   about: string[]
   sectionTitles: SectionTitles
   footer: FooterPart[]
+}
+
+export interface Certificate {
+  id: string
+  issuer: string
+  title: LocalizedText
+  image: LocalizedText
+  url?: LocalizedText
+  date?: string
 }

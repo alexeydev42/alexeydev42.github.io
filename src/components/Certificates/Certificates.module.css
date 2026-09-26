@@ -1,0 +1,156 @@
+.certificates {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.certificateList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.certificate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-24);
+  padding: var(--space-20);
+  border-radius: var(--radius-md);
+  outline: 1px solid var(--color-border);
+}
+
+.certificateInfo {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.certificateIssuer {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.certificateTitle {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+.viewButton {
+  flex-shrink: 0;
+  align-self: center;
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .viewButton:hover {
+    color: var(--color-accent);
+    text-shadow: 0 0 8px rgb(71 209 232 / 35%);
+  }
+}
+
+@media (width <= 600px) {
+  .certificate {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .certificateTitle {
+    text-align: center;
+  }
+
+  .dialogContent {
+    padding: var(--space-16);
+  }
+
+  .certificateInfo {
+    align-items: center;
+  }
+
+  .certificateImage {
+    max-height: calc(100svh - 160px);
+  }
+}
+
+.dialog {
+  width: min(960px, calc(100vw - 32px));
+  max-height: calc(100svh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  box-shadow: 0 20px 60px rgb(0 0 0 / 45%);
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 72%);
+  backdrop-filter: blur(4px);
+}
+
+.dialogContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-20);
+  padding: var(--space-24);
+}
+
+.dialogTitle {
+  max-width: calc(100% - 80px);
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+.dialogIssuer {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.dialogIssuer,
+.dialogTitle {
+  text-align: center;
+}
+
+.certificateImage {
+  display: block;
+  width: 100%;
+  max-height: calc(100svh - 220px);
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--space-16);
+  right: var(--space-16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--color-text-secondary);
+  transition:
+    color 0.2s ease,
+    filter 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .closeButton:hover {
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 6px rgb(71 209 232 / 45%));
+  }
+}

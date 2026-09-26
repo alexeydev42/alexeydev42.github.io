@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { content, contacts, projects, skillGroups } from './content/portfolio'
+import { content, contacts, projects, skillGroups, certificates } from './content/portfolio'
 import type { Language } from './content/types'
 import { Hero } from './components/Hero/Hero'
 import { About } from './components/About/About'
@@ -8,6 +8,7 @@ import { Skills } from './components/Skills/Skills'
 
 import styles from './App.module.css'
 import { Footer } from './components/Footer/Footer'
+import { Certificates } from './components/Certificates/Certificates'
 
 const LANGUAGE_STORAGE_KEY = 'portfolio-language'
 
@@ -55,6 +56,11 @@ function App() {
         <Skills
           title={currentContent.sectionTitles.skills}
           skillGroups={skillGroups}
+          language={language}
+        />
+        <Certificates
+          content={certificates}
+          title={currentContent.sectionTitles.certificates}
           language={language}
         />
         <Footer content={currentContent.footer} />
