@@ -40,13 +40,3 @@
     );
   }
 }
-
-/* @media (hover: none) and (pointer: coarse) {
-  .spotlight {
-    background: radial-gradient(
-      600px at 100% 50%,
-      var(--color-spotlight),
-      transparent 80%
-    );
-  }
-} */
