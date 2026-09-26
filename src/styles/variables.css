@@ -1,15 +1,15 @@
 :root {
   /* Colors */
-  --color-background: #0d1624;
-  --color-background-translucent: rgb(13 22 36 / 75%);
+  --color-background: #0b1220;
+  --color-background-translucent: rgb(11 18 32 / 75%);
   --color-text-primary: #e3f0fa;
   --color-text-secondary: #8aa0b5;
   --color-accent: #47d1e8;
-  --color-surface: rgb(24 37 54 / 72%);
-  --color-surface-hover: rgb(28 44 63 / 86%);
+  --color-surface: rgb(22 33 50 / 72%);
+  --color-surface-hover: rgb(26 40 59 / 86%);
   --color-border: rgb(73 98 124 / 48%);
   --color-border-hover: rgb(71 209 232 / 32%);
-  --color-spotlight: rgb(29 78 112 / 38%);
+  --color-spotlight: rgb(29 78 216 / 10%);
 
   /* Typography */
   --font-family-base: 'Manrope', sans-serif;

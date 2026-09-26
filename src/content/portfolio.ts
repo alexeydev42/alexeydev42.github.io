@@ -1,4 +1,4 @@
-import type { Contact, Language, PortfolioContent, Project, SkillGroup } from './types'
+import type { Contact, Language, PortfolioContent, Project, SkillGroup, Certificate } from './types'
 
 export const content: Record<Language, PortfolioContent> = {
   en: {
@@ -12,6 +12,7 @@ export const content: Record<Language, PortfolioContent> = {
       { id: 'about', title: 'About' },
       { id: 'projects', title: 'Projects' },
       { id: 'skills', title: 'Skills' },
+      { id: 'certificates', title: 'Certificates' },
     ],
     about: [
       'I’m a frontend developer, mainly working with React and TypeScript. I completed the Frontend Developer course at Yandex Practicum, where I built individual projects and worked with a team on SkillSwap, which is featured here.',
@@ -22,6 +23,7 @@ export const content: Record<Language, PortfolioContent> = {
       about: 'About',
       projects: 'Projects',
       skills: 'Skills',
+      certificates: 'Certificates',
     },
     footer: [
       { id: 'design-intro', text: 'Designed in ' },
@@ -86,6 +88,7 @@ export const content: Record<Language, PortfolioContent> = {
       { id: 'about', title: 'Обо мне' },
       { id: 'projects', title: 'Проекты' },
       { id: 'skills', title: 'Навыки' },
+      { id: 'certificates', title: 'Сертификаты' },
     ],
     about: [
       'Я фронтенд-разработчик, в основном работаю с React и TypeScript. Закончил курс "Фронтенд-разработчик" в Яндекс Практикуме, где в процессе обучения делал самостоятельные проекты и участвовал в командной разработке проекта SkillSwap, который представлен здесь.',
@@ -96,6 +99,7 @@ export const content: Record<Language, PortfolioContent> = {
       about: 'Обо мне',
       projects: 'Проекты',
       skills: 'Навыки',
+      certificates: 'Сертификаты',
     },
     footer: [
       { id: 'design-intro', text: 'Макет сделан в ' },
@@ -242,5 +246,34 @@ export const contacts: Contact[] = [
     id: 'email',
     url: 'mailto:alexey.dev42@gmail.com',
     label: 'Email',
+  },
+]
+
+export const certificates: Certificate[] = [
+  {
+    id: 'yandex-practicum',
+    issuer: 'Yandex Practicum',
+    title: {
+      en: 'Frontend Developer',
+      ru: 'Фронтенд-разработчик',
+    },
+    image: {
+      en: '/images/certificates/yandex-practicum-en.webp',
+      ru: '/images/certificates/yandex-practicum-ru.webp',
+    },
+    date: '2026',
+  },
+  {
+    id: 'stepik-javascript',
+    issuer: 'Stepik',
+    title: {
+      en: 'JavaScript Basic Level',
+      ru: 'Самый полный курс по JavaScript для начинающих программистов',
+    },
+    image: {
+      en: '/images/certificates/stepik-javascript-en.webp',
+      ru: '/images/certificates/stepik-javascript-ru.webp',
+    },
+    date: '2026',
   },
 ]
