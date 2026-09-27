@@ -45,7 +45,7 @@ export const ProjectCard = ({ project, language, onPreviewClick }: ProjectCardPr
             target="_blank"
             rel="noopener noreferrer"
           >
-            {language === 'en' ? 'Live demo' : 'Демо'}
+            {language === 'en' ? 'Live demo ↗' : 'Демо ↗'}
           </a>
         )}
       </div>

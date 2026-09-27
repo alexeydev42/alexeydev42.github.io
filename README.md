@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal portfolio website built with React and TypeScript.
 
-Currently, two official plugins are available:
+It presents my projects, skills and certificates and includes English and Russian content, responsive layouts and interaction states for desktop, keyboard and touch devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Live demo:** [alexeydev42.github.io](https://alexeydev42.github.io/)
 
-## React Compiler
+![Portfolio Website preview](public/og-preview.jpg)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- responsive layout for desktop, tablet and mobile;
+- English and Russian versions with persisted language selection;
+- project cards with repository and live demo links;
+- project and certificate previews using the native `dialog` element;
+- active section navigation on desktop;
+- sticky section headings on smaller screens;
+- pointer-following spotlight effect on desktop;
+- keyboard focus states and touch-specific interaction states;
+- `prefers-reduced-motion` support;
+- Open Graph and Twitter metadata for social link previews.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Technical decisions
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The site intentionally uses a simple component structure without a router or global state library. Portfolio content is stored as typed data and passed to presentation components through props.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+CSS Modules are used for component styles, while shared CSS variables define colors, typography, spacing and other design values.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The desktop layout uses two columns with a sticky introduction panel. At smaller widths it switches to a single-column layout with sticky section headings.
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+The native HTML `dialog` element is used for project and certificate previews. Interactive states are separated for mouse, keyboard and touch input, and reduced-motion preferences are respected.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Tech stack
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- React 19
+- TypeScript
+- Vite
+- CSS Modules
+- SVGR
+- Manrope
+- ESLint
+- Stylelint
+- Prettier
+- GitHub Pages
+
+## Run locally
+
+```bash
+git clone https://github.com/alexeydev42/alexeydev42.github.io.git
+cd alexeydev42.github.io
+npm install
+npm run dev
 ```
