@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className={styles.page}>
-      <div className={styles.spotlight} />
+      <div className={styles.spotlight} aria-hidden="true" />
       <Hero
         hero={currentContent.hero}
         language={language}

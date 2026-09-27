@@ -48,12 +48,6 @@
   color: var(--color-text-secondary);
 }
 
-.languageSwitcher:hover .inactiveLanguage,
-.languageSwitcher:focus-visible .inactiveLanguage {
-  color: var(--color-accent);
-  text-shadow: 0 0 10px rgb(71 209 232 / 50%);
-}
-
 .identity {
   max-width: 420px;
 }
@@ -115,16 +109,6 @@
   width: 64px;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .navigationLink:hover {
-    color: var(--color-text-primary);
-  }
-
-  .navigationLink:hover::before {
-    width: 64px;
-  }
-}
-
 .contacts {
   display: flex;
   align-items: center;
@@ -147,14 +131,29 @@
     filter 0.2s ease;
 }
 
-.contactLink:hover,
-.contactLink:focus-visible {
-  color: var(--color-accent);
-}
+@media (hover: hover) and (pointer: fine) {
+  .languageSwitcher:hover .inactiveLanguage {
+    color: var(--color-accent);
+    text-shadow: 0 0 10px rgb(71 209 232 / 50%);
+  }
 
-.contactLink:hover .contactIcon,
-.contactLink:focus-visible .contactIcon {
-  filter: drop-shadow(0 0 6px rgb(71 209 232 / 55%));
+  .navigationLink:hover {
+    color: var(--color-text-primary);
+  }
+
+  .navigationLink:hover::before {
+    width: 64px;
+  }
+
+  .contactLink:hover,
+  .contactLink:focus-visible {
+    color: var(--color-accent);
+  }
+
+  .contactLink:hover .contactIcon,
+  .contactLink:focus-visible .contactIcon {
+    filter: drop-shadow(0 0 6px rgb(71 209 232 / 55%));
+  }
 }
 
 @media (hover: none) and (pointer: coarse) {
@@ -168,7 +167,7 @@
     text-shadow: 0 0 10px rgb(71 209 232 / 50%);
   }
 
-  .languageSwitcher:focus .inactiveLanguage {
+  .languageSwitcher:focus:not(:active) .inactiveLanguage {
     color: var(--color-text-secondary);
     text-shadow: none;
   }

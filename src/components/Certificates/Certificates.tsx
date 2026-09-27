@@ -40,6 +40,11 @@ export const Certificates = ({ title, content, language }: CertificatesProps) =>
       </ul>
 
       <Dialog
+        ariaLabel={
+          language === 'en'
+            ? `Certificate: ${selectedCertificate?.title[language] ?? ''}`
+            : `Сертификат: ${selectedCertificate?.title[language] ?? ''}`
+        }
         isOpen={selectedCertificate !== null}
         onClose={() => setSelectedCertificate(null)}
         closeLabel={language === 'en' ? 'Close certificate' : 'Закрыть сертификат'}

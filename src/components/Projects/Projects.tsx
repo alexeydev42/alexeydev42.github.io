@@ -30,6 +30,11 @@ export const Projects = ({ title, projects, language }: ProjectsProps) => {
         ))}
       </div>
       <Dialog
+        ariaLabel={
+          language === 'en'
+            ? `Preview of ${selectedProject?.name ?? ''}`
+            : `Превью проекта ${selectedProject?.name ?? ''}`
+        }
         isOpen={selectedProject !== null}
         onClose={() => setSelectedProject(null)}
         closeLabel={language === 'en' ? 'Close project preview' : 'Закрыть превью проекта'}
