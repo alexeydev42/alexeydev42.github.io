@@ -64,12 +64,6 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
-@media (hover: none) and (pointer: coarse) {
-  a:focus {
-    color: var(--color-accent);
-  }
-}
-
 img {
   display: block;
   max-width: 100%;
