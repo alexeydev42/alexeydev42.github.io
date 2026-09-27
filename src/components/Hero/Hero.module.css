@@ -147,14 +147,16 @@
     filter 0.2s ease;
 }
 
-.contactLink:hover,
-.contactLink:focus-visible {
-  color: var(--color-accent);
-}
+@media (hover: hover) and (pointer: fine) {
+  .contactLink:hover,
+  .contactLink:focus-visible {
+    color: var(--color-accent);
+  }
 
-.contactLink:hover .contactIcon,
-.contactLink:focus-visible .contactIcon {
-  filter: drop-shadow(0 0 6px rgb(71 209 232 / 55%));
+  .contactLink:hover .contactIcon,
+  .contactLink:focus-visible .contactIcon {
+    filter: drop-shadow(0 0 6px rgb(71 209 232 / 55%));
+  }
 }
 
 @media (hover: none) and (pointer: coarse) {

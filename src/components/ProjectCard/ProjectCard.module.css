@@ -37,11 +37,6 @@
     text-shadow 0.2s ease;
 }
 
-.titleLink:focus-visible {
-  color: var(--color-accent);
-  text-shadow: 0 0 8px rgb(71 209 232 / 35%);
-}
-
 .titleIcons {
   display: inline-flex;
   align-items: center;
@@ -60,17 +55,6 @@
 
 .arrowRight {
   margin-left: -10px;
-}
-
-.titleLink:focus-visible .arrowRight {
-  transform: translateX(4px);
-  filter: drop-shadow(0 0 6px rgb(71 209 232 / 45%));
-}
-
-.titleLink:focus-visible .arrowLeft {
-  transform: translateX(4px);
-  filter: drop-shadow(0 0 6px rgb(71 209 232 / 45%));
-  transition-delay: 0.07s;
 }
 
 .description {
@@ -106,11 +90,6 @@
     text-shadow 0.2s ease;
 }
 
-.projectLink:focus-visible {
-  color: var(--color-accent);
-  text-shadow: 0 0 8px rgb(71 209 232 / 35%);
-}
-
 .preview {
   grid-area: preview;
   align-self: start;
@@ -128,14 +107,36 @@
   object-fit: cover;
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (width > 1024px) and (hover: hover) and (pointer: fine) {
+  .titleLink:focus-visible {
+    color: var(--color-accent);
+    text-shadow: 0 0 8px rgb(71 209 232 / 35%);
+  }
+
+  .titleLink:focus-visible .arrowRight {
+    transform: translateX(4px);
+    filter: drop-shadow(0 0 6px rgb(71 209 232 / 45%));
+  }
+
+  .titleLink:focus-visible .arrowLeft {
+    transform: translateX(4px);
+    filter: drop-shadow(0 0 6px rgb(71 209 232 / 45%));
+    transition-delay: 0.07s;
+  }
+
+  .projectLink:focus-visible {
+    color: var(--color-accent);
+    text-shadow: 0 0 8px rgb(71 209 232 / 35%);
+  }
+
   .card:hover {
     background-color: var(--color-surface);
     outline-color: rgb(71 209 232 / 15%);
     box-shadow: -2px 4px 10px rgb(0 0 0 / 22%);
   }
 
-  .preview:hover {
+  .preview:hover,
+  .preview:focus-visible {
     filter: drop-shadow(0 0 6px rgb(71 209 232 / 45%));
   }
 
@@ -163,24 +164,29 @@
 
 @media (hover: none) and (pointer: coarse) {
   .titleLink,
-  .arrowLeft,
-  .arrowRight,
   .projectLink,
   .preview {
     transition-duration: 0s;
   }
 
   .titleLink:active {
+    color: var(--color-accent);
     text-shadow: 0 0 8px rgb(71 209 232 / 35%);
   }
 
-  .titleLink:active .arrowRight,
-  .titleLink:active .arrowLeft {
+  .titleLink:active .arrowRight {
     transform: translateX(4px);
     filter: drop-shadow(0 0 6px rgb(71 209 232 / 45%));
   }
 
+  .titleLink:active .arrowLeft {
+    transform: translateX(4px);
+    filter: drop-shadow(0 0 6px rgb(71 209 232 / 45%));
+    transition-delay: 0.07s;
+  }
+
   .projectLink:active {
+    color: var(--color-accent);
     text-shadow: 0 0 8px rgb(71 209 232 / 35%);
   }
 

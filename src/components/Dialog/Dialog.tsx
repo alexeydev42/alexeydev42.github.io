@@ -8,10 +8,11 @@ interface DialogProps {
   isOpen: boolean
   onClose: () => void
   closeLabel: string
+  ariaLabel: string
   children: ReactNode
 }
 
-export const Dialog = ({ isOpen, onClose, closeLabel, children }: DialogProps) => {
+export const Dialog = ({ isOpen, onClose, closeLabel, ariaLabel, children }: DialogProps) => {
   const dialogRef = useRef<HTMLDialogElement>(null)
 
   useEffect(() => {
@@ -41,7 +42,13 @@ export const Dialog = ({ isOpen, onClose, closeLabel, children }: DialogProps) =
   }
 
   return (
-    <dialog ref={dialogRef} className={styles.dialog} onClose={onClose} onClick={handleDialogClick}>
+    <dialog
+      ref={dialogRef}
+      className={styles.dialog}
+      aria-label={ariaLabel}
+      onClose={onClose}
+      onClick={handleDialogClick}
+    >
       <div className={styles.dialogContent}>
         {children}
 
@@ -51,7 +58,7 @@ export const Dialog = ({ isOpen, onClose, closeLabel, children }: DialogProps) =
           onClick={closeDialog}
           aria-label={closeLabel}
         >
-          <CloseIcon className={styles.closeIcon} />
+          <CloseIcon className={styles.closeIcon} aria-hidden="true" />
         </button>
       </div>
     </dialog>

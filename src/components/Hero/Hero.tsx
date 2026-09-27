@@ -112,7 +112,7 @@ export const Hero = ({ hero, language, onToggleLanguage, navigation, contacts }:
                 target={isExternal ? '_blank' : undefined}
                 rel={isExternal ? 'noopener noreferrer' : undefined}
               >
-                <Icon className={styles.contactIcon} />
+                <Icon className={styles.contactIcon} aria-hidden="true" />
               </a>
             </li>
           )
