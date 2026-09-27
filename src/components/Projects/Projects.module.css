@@ -9,3 +9,21 @@
   flex-direction: column;
   gap: var(--space-32);
 }
+
+.projectPreview {
+  padding-top: var(--space-48);
+}
+
+.projectPreviewImage {
+  display: block;
+  width: 100%;
+  max-height: calc(100svh - 120px);
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+@media (width <= 600px) {
+  .projectPreview {
+    padding-top: var(--space-32);
+  }
+}

@@ -1,8 +1,7 @@
-import { useRef, useState } from 'react'
-import type { MouseEvent } from 'react'
+import { useState } from 'react'
 import type { Certificate, Language } from '../../content/types'
-import CloseIcon from '../../assets/icons/close.svg?react'
 import { SectionTitle } from '../SectionTitle/SectionTitle'
+import { Dialog } from '../Dialog/Dialog'
 
 import styles from './Certificates.module.css'
 
@@ -14,17 +13,6 @@ interface CertificatesProps {
 
 export const Certificates = ({ title, content, language }: CertificatesProps) => {
   const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null)
-  const dialogRef = useRef<HTMLDialogElement>(null)
-
-  const closeDialog = () => {
-    dialogRef.current?.close()
-  }
-
-  const handleDialogClick = (event: MouseEvent<HTMLDialogElement>) => {
-    if (event.target === event.currentTarget) {
-      closeDialog()
-    }
-  }
 
   return (
     <section className={styles.certificates} id="certificates">
@@ -43,7 +31,6 @@ export const Certificates = ({ title, content, language }: CertificatesProps) =>
               type="button"
               onClick={() => {
                 setSelectedCertificate(certificate)
-                dialogRef.current?.showModal()
               }}
             >
               {language === 'en' ? 'View certificate' : 'Посмотреть сертификат'}
@@ -52,34 +39,25 @@ export const Certificates = ({ title, content, language }: CertificatesProps) =>
         ))}
       </ul>
 
-      <dialog
-        ref={dialogRef}
-        className={styles.dialog}
+      <Dialog
+        isOpen={selectedCertificate !== null}
         onClose={() => setSelectedCertificate(null)}
-        onClick={handleDialogClick}
+        closeLabel={language === 'en' ? 'Close certificate' : 'Закрыть сертификат'}
       >
         {selectedCertificate && (
-          <div className={styles.dialogContent}>
-            <p className={styles.dialogIssuer}>{selectedCertificate.issuer}</p>
-            <h3 className={styles.dialogTitle}>{selectedCertificate.title[language]}</h3>
+          <>
+            <p className={styles.certificateDialogIssuer}>{selectedCertificate.issuer}</p>
+
+            <h3 className={styles.certificateDialogTitle}>{selectedCertificate.title[language]}</h3>
 
             <img
               className={styles.certificateImage}
               src={selectedCertificate.image[language]}
               alt={selectedCertificate.title[language]}
             />
-
-            <button
-              className={styles.closeButton}
-              type="button"
-              onClick={closeDialog}
-              aria-label={language === 'en' ? 'Close certificate' : 'Закрыть сертификат'}
-            >
-              <CloseIcon className={styles.closeIcon} />
-            </button>
-          </div>
+          </>
         )}
-      </dialog>
+      </Dialog>
     </section>
   )
 }
