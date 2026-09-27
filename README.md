@@ -51,3 +51,4 @@ git clone https://github.com/alexeydev42/alexeydev42.github.io.git
 cd alexeydev42.github.io
 npm install
 npm run dev
+```
