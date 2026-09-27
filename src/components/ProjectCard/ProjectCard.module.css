@@ -116,6 +116,7 @@
   align-self: start;
   min-width: 0;
   transform: translateY(var(--space-4));
+  transition: filter 0.2s ease;
 }
 
 .image {
