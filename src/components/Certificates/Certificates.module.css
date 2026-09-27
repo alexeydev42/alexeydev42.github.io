@@ -119,13 +119,16 @@
 }
 
 @media (hover: none) and (pointer: coarse) {
-  .certificate {
-    outline-color: rgb(71 209 232 / 15%);
+  .viewButton {
+    transition-duration: 0s;
   }
 
-  .viewButton:active,
-  .viewButton:focus {
+  .viewButton:active {
     color: var(--color-accent);
     text-shadow: 0 0 8px rgb(71 209 232 / 35%);
+  }
+
+  .certificate {
+    outline-color: rgb(71 209 232 / 15%);
   }
 }

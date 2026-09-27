@@ -22,3 +22,14 @@
     text-shadow: 0 0 8px rgb(71 209 232 / 35%);
   }
 }
+
+@media (hover: none) and (pointer: coarse) {
+  .link {
+    transition-duration: 0s;
+  }
+
+  .link:active {
+    color: var(--color-accent);
+    text-shadow: 0 0 8px rgb(71 209 232 / 35%);
+  }
+}

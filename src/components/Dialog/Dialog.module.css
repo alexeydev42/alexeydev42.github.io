@@ -59,6 +59,10 @@
 }
 
 @media (hover: none) and (pointer: coarse) {
+  .closeButton {
+    transition-duration: 0s;
+  }
+
   .closeButton:active {
     color: var(--color-accent);
     filter: drop-shadow(0 0 6px rgb(71 209 232 / 45%));
