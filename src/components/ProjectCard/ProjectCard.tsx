@@ -5,9 +5,10 @@ import styles from './ProjectCard.module.css'
 interface ProjectCardProps {
   project: Project
   language: Language
+  onPreviewClick: (project: Project) => void
 }
 
-export const ProjectCard = ({ project, language }: ProjectCardProps) => {
+export const ProjectCard = ({ project, language, onPreviewClick }: ProjectCardProps) => {
   return (
     <article className={styles.card}>
       <div className={styles.content}>
@@ -49,9 +50,18 @@ export const ProjectCard = ({ project, language }: ProjectCardProps) => {
         )}
       </div>
 
-      <div className={styles.preview}>
+      <button
+        className={styles.preview}
+        type="button"
+        onClick={() => onPreviewClick(project)}
+        aria-label={
+          language === 'en'
+            ? `View preview of ${project.name}`
+            : `Посмотреть превью проекта ${project.name}`
+        }
+      >
         <img className={styles.image} src={project.image} alt="" />
-      </div>
+      </button>
     </article>
   )
 }

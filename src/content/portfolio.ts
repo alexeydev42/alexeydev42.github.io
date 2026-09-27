@@ -157,6 +157,17 @@ export const content: Record<Language, PortfolioContent> = {
 
 export const projects: Project[] = [
   {
+    id: 'portfolio',
+    name: 'Portfolio Website',
+    image: '/images/projects/portfolio.webp',
+    description: {
+      en: 'My personal portfolio website, which you are viewing right now. It is built with React and TypeScript and includes responsive layouts, English and Russian content, a certificate viewer, active section navigation and a pointer-following spotlight effect.',
+      ru: 'Мой личный сайт-портфолио, на котором вы находитесь прямо сейчас, построенный на React и TypeScript. В нём реализованы адаптивная вёрстка, английская и русская версии, просмотр сертификатов, активная навигация по секциям и spotlight-эффект, следующий за курсором.',
+    },
+    technologies: ['React', 'TypeScript', 'Vite', 'CSS Modules'],
+    repository: 'https://github.com/alexeydev42/alexeydev42.github.io',
+  },
+  {
     id: 'skill-swap',
     name: 'SkillSwap',
     image: '/images/projects/skill-swap.webp',

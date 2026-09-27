@@ -143,6 +143,7 @@
   align-items: center;
   justify-content: center;
   color: var(--color-text-secondary);
+  transition: color 0.2s ease;
 }
 
 .contactIcon {
