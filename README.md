@@ -4,7 +4,7 @@ My personal portfolio website built with React and TypeScript.
 
 It presents my projects, skills and certificates and includes English and Russian content, responsive layouts and interaction states for desktop, keyboard and touch devices.
 
-**Live demo:** [alexeydev42.github.io](https://alexeydev42.com/)
+**Live demo:** [alexeydev42.com](https://alexeydev42.com/)
 
 ![Portfolio Website preview](public/og-preview.jpg)
 
