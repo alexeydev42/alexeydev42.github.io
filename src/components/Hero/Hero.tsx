@@ -77,7 +77,9 @@ export const Hero = ({ hero, language, onToggleLanguage, navigation, contacts }:
 
         <div className={styles.heroBody}>
           <div className={styles.identity}>
-            <h1 className={styles.name}>{hero.name}</h1>
+            <h1 className={styles.name}>
+              <a href="/">{hero.name}</a>
+            </h1>
             <p className={styles.role}>{hero.role}</p>
             <p className={styles.intro}>{hero.intro}</p>
           </div>
