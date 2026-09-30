@@ -4,9 +4,10 @@ import styles from './Footer.module.css'
 
 interface FooterProps {
   content: FooterPart[]
+  analyticsNote: string
 }
 
-export const Footer = ({ content }: FooterProps) => {
+export const Footer = ({ content, analyticsNote }: FooterProps) => {
   return (
     <footer className={styles.footer}>
       <p className={styles.text}>
@@ -28,6 +29,7 @@ export const Footer = ({ content }: FooterProps) => {
           return <Fragment key={part.id}>{part.text}</Fragment>
         })}
       </p>
+      <p className={styles.text}>{analyticsNote}</p>
     </footer>
   )
 }

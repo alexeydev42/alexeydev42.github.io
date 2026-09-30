@@ -76,6 +76,8 @@ export const content: Record<Language, PortfolioContent> = {
       },
       { id: 'footer-period', text: '.' },
     ],
+    analyticsNote:
+      'Anonymous traffic statistics are collected with Cloudflare Web Analytics. No analytics cookies are used.',
   },
   ru: {
     hero: {
@@ -152,6 +154,8 @@ export const content: Record<Language, PortfolioContent> = {
       },
       { id: 'footer-period', text: '.' },
     ],
+    analyticsNote:
+      'Анонимная статистика посещений собирается с помощью Cloudflare Web Analytics. Аналитические cookies не используются.',
   },
 }
 
