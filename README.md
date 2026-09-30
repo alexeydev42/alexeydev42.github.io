@@ -31,6 +31,8 @@ The desktop layout uses two columns with a sticky introduction panel. At smaller
 
 The native HTML `dialog` element is used for project and certificate previews. Interactive states are separated for mouse, keyboard and touch input, and reduced-motion preferences are respected.
 
+Key UI behavior is covered with Vitest and React Testing Library. The test suite is also run automatically in GitHub Actions.
+
 ## Tech stack
 
 - React 19
@@ -42,6 +44,8 @@ The native HTML `dialog` element is used for project and certificate previews. I
 - ESLint
 - Stylelint
 - Prettier
+- Vitest
+- React Testing Library
 - GitHub Pages
 
 ## Run locally
@@ -51,4 +55,18 @@ git clone https://github.com/alexeydev42/alexeydev42.github.io.git
 cd alexeydev42.github.io
 npm install
 npm run dev
+```
+
+## Tests
+
+Run the test suite once:
+
+```bash
+npm test
+```
+
+Run tests in watch mode during development:
+
+```bash
+npm run test:watch
 ```
