@@ -60,6 +60,7 @@ export interface PortfolioContent {
   about: string[]
   sectionTitles: SectionTitles
   footer: FooterPart[]
+  analyticsNote: string
 }
 
 export interface Certificate {

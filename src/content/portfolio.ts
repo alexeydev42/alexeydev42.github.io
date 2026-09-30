@@ -76,6 +76,8 @@ export const content: Record<Language, PortfolioContent> = {
       },
       { id: 'footer-period', text: '.' },
     ],
+    analyticsNote:
+      'Anonymous traffic statistics are collected with Cloudflare Web Analytics. No analytics cookies are used.',
   },
   ru: {
     hero: {
@@ -152,6 +154,8 @@ export const content: Record<Language, PortfolioContent> = {
       },
       { id: 'footer-period', text: '.' },
     ],
+    analyticsNote:
+      'Анонимная статистика посещений собирается с помощью Cloudflare Web Analytics. Аналитические cookies не используются.',
   },
 }
 
@@ -177,7 +181,7 @@ export const projects: Project[] = [
     },
     technologies: ['React', 'TypeScript', 'Redux Toolkit', 'React Router', 'CSS Modules'],
     repository: 'https://github.com/alexeydev42/SkillSwap_55_3',
-    demo: 'https://alexeydev42.github.io/SkillSwap_55_3/',
+    demo: 'https://alexeydev42.com/SkillSwap_55_3/',
   },
   {
     id: 'todo-react',
@@ -189,7 +193,7 @@ export const projects: Project[] = [
     },
     technologies: ['React', 'JavaScript', 'Context API', 'useReducer', 'SCSS Modules', 'Vite'],
     repository: 'https://github.com/alexeydev42/todo-react',
-    demo: 'https://alexeydev42.github.io/todo-react/',
+    demo: 'https://alexeydev42.com/todo-react/',
   },
   {
     id: 'stellar-burgers',

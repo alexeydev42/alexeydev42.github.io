@@ -77,7 +77,7 @@ function App() {
           title={currentContent.sectionTitles.certificates}
           language={language}
         />
-        <Footer content={currentContent.footer} />
+        <Footer content={currentContent.footer} analyticsNote={currentContent.analyticsNote} />
       </main>
     </div>
   )
