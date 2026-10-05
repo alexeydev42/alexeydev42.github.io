@@ -1,0 +1,70 @@
+.dialog {
+  width: min(960px, calc(100vw - 32px));
+  max-height: calc(100svh - 32px);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  box-shadow: 0 20px 60px rgb(0 0 0 / 45%);
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 72%);
+  backdrop-filter: blur(4px);
+}
+
+.dialogContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-20);
+  padding: var(--space-24);
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--space-16);
+  right: var(--space-16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--color-text-secondary);
+  transition:
+    color 0.2s ease,
+    filter 0.2s ease;
+}
+
+@media (width <= 600px) {
+  .dialogContent {
+    padding: var(--space-16);
+  }
+
+  .closeButton {
+    top: var(--space-8);
+    right: var(--space-8);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .closeButton:hover {
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 6px rgb(71 209 232 / 45%));
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .closeButton {
+    transition-duration: 0s;
+  }
+
+  .closeButton:active {
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 6px rgb(71 209 232 / 45%));
+  }
+}

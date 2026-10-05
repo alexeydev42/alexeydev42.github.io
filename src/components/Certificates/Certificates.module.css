@@ -1,0 +1,134 @@
+.certificates {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.certificateList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.certificate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-24);
+  padding: var(--space-20);
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  outline: 1px solid transparent;
+  transition:
+    background-color 0.2s ease,
+    outline-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.certificateInfo {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.certificateIssuer {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.certificateTitle {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+.viewButton {
+  flex-shrink: 0;
+  align-self: center;
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+@media (width <= 600px) {
+  .certificates {
+    gap: var(--space-24);
+  }
+
+  .certificate {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .certificateTitle {
+    text-align: center;
+  }
+
+  .certificateInfo {
+    align-items: center;
+  }
+
+  .certificateImage {
+    max-height: calc(100svh - 160px);
+  }
+}
+
+.certificateDialogTitle {
+  max-width: calc(100% - 80px);
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+.certificateDialogIssuer {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
+.certificateDialogIssuer,
+.certificateDialogTitle {
+  text-align: center;
+}
+
+.certificateImage {
+  display: block;
+  width: 100%;
+  max-height: calc(100svh - 220px);
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+@media (width > 1024px) and (hover: hover) and (pointer: fine) {
+  .viewButton:hover,
+  .viewButton:focus-visible {
+    color: var(--color-accent);
+    text-shadow: 0 0 8px rgb(71 209 232 / 35%);
+  }
+
+  .certificate:hover {
+    background-color: var(--color-surface);
+    outline-color: rgb(71 209 232 / 15%);
+    box-shadow: -2px 4px 10px rgb(0 0 0 / 22%);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .viewButton {
+    transition-duration: 0s;
+  }
+
+  .viewButton:active {
+    color: var(--color-accent);
+    text-shadow: 0 0 8px rgb(71 209 232 / 35%);
+  }
+
+  .certificate {
+    outline-color: rgb(71 209 232 / 15%);
+  }
+}
