@@ -161,6 +161,26 @@ export const content: Record<Language, PortfolioContent> = {
 
 export const projects: Project[] = [
   {
+    id: 'phrase-cue',
+    name: 'PhraseCue',
+    image: '/images/projects/phrase-cue.webp',
+    description: {
+      en: 'A personal app for learning English phrases from TV shows. It lets users find lines in imported SRT subtitles by timecode or text, translate and save them for later review. I built the state management with Redux Toolkit, local data storage and a serverless translation API.',
+      ru: 'Самостоятельное приложение для изучения английских фраз из сериалов. Позволяет находить реплики в загруженных SRT-субтитрах по времени или тексту, переводить и сохранять их для последующего повторения. В проекте я реализовал управление состоянием через Redux Toolkit, локальное хранение данных и серверный API перевода.',
+    },
+    technologies: [
+      'React',
+      'TypeScript',
+      'Redux Toolkit',
+      'React Router',
+      'IndexedDB',
+      'CSS Modules',
+    ],
+    repository: 'https://github.com/alexeydev42/phrase-cue',
+    demo: 'https://alexeydev42.com/phrase-cue/',
+    detailPath: '/projects/phrase-cue/',
+  },
+  {
     id: 'portfolio',
     name: 'Portfolio Website',
     image: '/images/projects/portfolio.webp',

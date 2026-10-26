@@ -20,6 +20,7 @@ export interface Project {
   technologies: string[]
   repository: string
   demo?: string
+  detailPath?: string
 }
 
 export interface SkillGroup {

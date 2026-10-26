@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import type { Language, Project } from '../../content/types'
 import ArrowIcon from '../../assets/icons/arrow-badge-right.svg?react'
 import styles from './ProjectCard.module.css'
@@ -9,6 +10,8 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ project, language, onPreviewClick }: ProjectCardProps) => {
+  const previewImage = <img className={styles.image} src={project.image} alt="" />
+
   return (
     <article className={styles.card}>
       <div className={styles.content}>
@@ -45,23 +48,47 @@ export const ProjectCard = ({ project, language, onPreviewClick }: ProjectCardPr
             target="_blank"
             rel="noopener noreferrer"
           >
-            {language === 'en' ? 'Live demo ↗' : 'Демо ↗'}
+            <span>{language === 'en' ? 'Live demo' : 'Демо'}</span>
+            <span className={styles.linkArrow} aria-hidden="true">
+              ↗
+            </span>
           </a>
         )}
       </div>
 
-      <button
-        className={styles.preview}
-        type="button"
-        onClick={() => onPreviewClick(project)}
-        aria-label={
-          language === 'en'
-            ? `View preview of ${project.name}`
-            : `Посмотреть превью проекта ${project.name}`
-        }
-      >
-        <img className={styles.image} src={project.image} alt="" />
-      </button>
+      {project.detailPath ? (
+        <Link
+          className={styles.preview}
+          to={project.detailPath}
+          aria-label={
+            language === 'en'
+              ? `View details of ${project.name}`
+              : `Подробнее о проекте ${project.name}`
+          }
+        >
+          {previewImage}
+
+          <span className={styles.projectLink}>
+            <span>{language === 'en' ? 'View details' : 'Подробнее'}</span>
+            <span className={styles.linkArrow} aria-hidden="true">
+              ↗
+            </span>
+          </span>
+        </Link>
+      ) : (
+        <button
+          className={styles.preview}
+          type="button"
+          onClick={() => onPreviewClick(project)}
+          aria-label={
+            language === 'en'
+              ? `View preview of ${project.name}`
+              : `Посмотреть превью проекта ${project.name}`
+          }
+        >
+          {previewImage}
+        </button>
+      )}
     </article>
   )
 }

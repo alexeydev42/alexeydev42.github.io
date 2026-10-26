@@ -1,6 +1,4 @@
 .page {
-  --page-padding-block: clamp(48px, calc(37.333px + 2.963vw), 80px);
-  --page-padding-inline: clamp(32px, calc(2.667px + 8.148vw), 120px);
   --page-gap: clamp(40px, calc(-58.462px + 9.615vw), 80px);
 
   display: grid;
