@@ -113,7 +113,10 @@ function App() {
         }
       />
 
-      <Route path="/projects/phrase-cue/" element={<PhraseCuePage language={language} />} />
+      <Route
+        path="/projects/phrase-cue/"
+        element={<PhraseCuePage language={language} onToggleLanguage={toggleLanguage} />}
+      />
     </Routes>
   )
 }

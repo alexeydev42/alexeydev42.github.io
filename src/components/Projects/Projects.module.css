@@ -17,7 +17,7 @@
 .projectPreviewImage {
   display: block;
   width: 100%;
-  max-height: calc(100svh - 120px);
+  max-height: calc(100svh - 144px);
   object-fit: contain;
   border-radius: var(--radius-sm);
 }
@@ -25,5 +25,9 @@
 @media (width <= 600px) {
   .projectPreview {
     padding-top: var(--space-32);
+  }
+
+  .projectPreviewImage {
+    max-height: calc(100svh - 112px);
   }
 }
