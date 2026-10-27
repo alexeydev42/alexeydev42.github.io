@@ -15,9 +15,9 @@ export const content: Record<Language, PortfolioContent> = {
       { id: 'certificates', title: 'Certificates' },
     ],
     about: [
-      'I’m a frontend developer, mainly working with React and TypeScript. I completed the Frontend Developer course at Yandex Practicum, where I built individual projects and worked with a team on SkillSwap, which is featured here.',
-      'After the course, I improved my course projects and then started working on projects of my own to strengthen my React and TypeScript skills, get a deeper understanding of application architecture, and learn new things through practice.',
-      'Before frontend development, I spent several years working in motion design. It’s not my main focus now, but that experience taught me to pay attention to rhythm, motion and visual details in interfaces.',
+      'I’m a frontend developer, mainly working with React and TypeScript. I build projects of my own, working with APIs, state management, local data persistence, testing and CI, and I also contribute to open-source projects.',
+      'In 2026, I completed the Frontend Developer program at Yandex Practicum. During the program, I built individual projects and worked with a team on SkillSwap, which is featured here. After graduating, I continued improving my course projects and then moved on to projects of my own, including PhraseCue, which I took from an idea to its first public release and continue to develop.',
+      'Before moving into frontend development, I spent several years working in motion design. It’s no longer my main focus, but that experience taught me to pay attention to rhythm, motion and visual details in interfaces.',
     ],
     sectionTitles: {
       about: 'About',
@@ -93,8 +93,8 @@ export const content: Record<Language, PortfolioContent> = {
       { id: 'certificates', title: 'Сертификаты' },
     ],
     about: [
-      'Я фронтенд-разработчик, в основном работаю с React и TypeScript. Закончил курс "Фронтенд-разработчик" в Яндекс Практикуме, где в процессе обучения делал самостоятельные проекты и участвовал в командной разработке проекта SkillSwap, который представлен здесь.',
-      'После курса я доработал учебные проекты, а затем начал работать над собственными, чтобы закреплять React и TypeScript, глубже разбираться в архитектуре приложений и осваивать новые для себя вещи на практике.',
+      'Я фронтенд-разработчик, в основном работаю с React и TypeScript. Разрабатываю собственные проекты, работаю с API, управлением состоянием, локальным хранением данных, тестированием и CI, а также участвую в open-source проектах.',
+      'В 2026 году закончил курс «Фронтенд-разработчик» в Яндекс Практикуме. Во время обучения делал самостоятельные проекты и участвовал в командной разработке SkillSwap, который представлен здесь. После курса продолжил развивать учебные проекты, а затем перешёл к собственным — в том числе PhraseCue, который довёл от идеи до первой публичной версии и продолжаю развивать дальше.',
       'До фронтенда я несколько лет занимался моушн-дизайном. Сейчас это не основное направление, но этот опыт приучил меня обращать внимание на ритм, движение и визуальные детали интерфейса.',
     ],
     sectionTitles: {
@@ -161,6 +161,26 @@ export const content: Record<Language, PortfolioContent> = {
 
 export const projects: Project[] = [
   {
+    id: 'phrase-cue',
+    name: 'PhraseCue',
+    image: '/images/projects/phrase-cue.webp',
+    description: {
+      en: 'A personal app for learning English phrases from TV shows. It lets users find lines in imported SRT subtitles by timecode or text, translate and save them for later review. I built the state management with Redux Toolkit, local data storage and a serverless translation API.',
+      ru: 'Самостоятельное приложение для изучения английских фраз из сериалов. Позволяет находить реплики в загруженных SRT-субтитрах по времени или тексту, переводить и сохранять их для последующего повторения. В проекте я реализовал управление состоянием через Redux Toolkit, локальное хранение данных и серверный API перевода.',
+    },
+    technologies: [
+      'React',
+      'TypeScript',
+      'Redux Toolkit',
+      'React Router',
+      'IndexedDB',
+      'CSS Modules',
+    ],
+    repository: 'https://github.com/alexeydev42/phrase-cue',
+    demo: 'https://alexeydev42.com/phrase-cue/',
+    detailPath: '/projects/phrase-cue/',
+  },
+  {
     id: 'portfolio',
     name: 'Portfolio Website',
     image: '/images/projects/portfolio.webp',
@@ -226,7 +246,7 @@ export const skillGroups: SkillGroup[] = [
       en: 'Frontend',
       ru: 'Фронтенд',
     },
-    skills: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS'],
+    skills: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'SCSS'],
   },
   {
     id: 'state-routing',
@@ -242,7 +262,15 @@ export const skillGroups: SkillGroup[] = [
       en: 'Tools & Testing',
       ru: 'Инструменты и тестирование',
     },
-    skills: ['Git', 'Vite', 'Jest', 'React Testing Library', 'Playwright'],
+    skills: [
+      'Git',
+      'Vite',
+      'GitHub Actions',
+      'Vitest',
+      'Jest',
+      'React Testing Library',
+      'Playwright',
+    ],
   },
 ]
 

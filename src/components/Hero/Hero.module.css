@@ -21,39 +21,12 @@
   gap: clamp(40px, calc(-38.769px + 7.692vw), 72px);
 }
 
-.languageSwitcher {
-  align-self: flex-start;
-  font-size: var(--font-size-label);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-ui);
-  letter-spacing: 0.08em;
-}
-
-.activeLanguage {
-  color: var(--color-text-primary);
-  transition:
-    color 0.2s ease,
-    text-shadow 0.2s ease;
-}
-
-.inactiveLanguage {
-  color: var(--color-text-secondary);
-  transition:
-    color 0.2s ease,
-    text-shadow 0.2s ease;
-}
-
-.languageSeparator {
-  margin: 0 var(--space-8);
-  color: var(--color-text-secondary);
-}
-
 .identity {
   max-width: 420px;
 }
 
 .name {
-  font-size: clamp(2.5rem, calc(15.385px + 2.404vw), 3.125rem);
+  font-size: var(--font-size-page-title);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
 }
@@ -109,80 +82,13 @@
   width: 64px;
 }
 
-.contacts {
-  display: flex;
-  align-items: center;
-  gap: var(--space-20);
-}
-
-.contactLink {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-secondary);
-  transition: color 0.2s ease;
-}
-
-.contactIcon {
-  width: 24px;
-  height: 24px;
-  transition:
-    color 0.2s ease,
-    filter 0.2s ease;
-}
-
 @media (hover: hover) and (pointer: fine) {
-  .languageSwitcher:hover .inactiveLanguage {
-    color: var(--color-accent);
-    text-shadow: 0 0 10px rgb(71 209 232 / 50%);
-  }
-
   .navigationLink:hover {
     color: var(--color-text-primary);
   }
 
   .navigationLink:hover::before {
     width: 64px;
-  }
-
-  .contactLink:hover,
-  .contactLink:focus-visible {
-    color: var(--color-accent);
-  }
-
-  .contactLink:hover .contactIcon,
-  .contactLink:focus-visible .contactIcon {
-    filter: drop-shadow(0 0 6px rgb(71 209 232 / 55%));
-  }
-}
-
-@media (hover: none) and (pointer: coarse) {
-  .activeLanguage,
-  .inactiveLanguage {
-    transition-duration: 0s;
-  }
-
-  .languageSwitcher:active .inactiveLanguage {
-    color: var(--color-accent);
-    text-shadow: 0 0 10px rgb(71 209 232 / 50%);
-  }
-
-  .languageSwitcher:focus:not(:active) .inactiveLanguage {
-    color: var(--color-text-secondary);
-    text-shadow: none;
-  }
-
-  .contactLink,
-  .contactIcon {
-    transition-duration: 0s;
-  }
-
-  .contactLink:active {
-    color: var(--color-accent);
-  }
-
-  .contactLink:active .contactIcon {
-    filter: drop-shadow(0 0 6px rgb(71 209 232 / 55%));
   }
 }
 
@@ -201,9 +107,5 @@
 
   .navigation {
     display: none;
-  }
-
-  .name {
-    font-size: clamp(2rem, calc(29.831px + 0.602vw), 2.25rem);
   }
 }

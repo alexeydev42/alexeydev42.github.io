@@ -1,0 +1,50 @@
+.languageSwitcher {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  width: fit-content;
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-ui);
+  letter-spacing: 0.08em;
+}
+
+.activeLanguage,
+.inactiveLanguage {
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+.activeLanguage {
+  color: var(--color-text-primary);
+}
+
+.inactiveLanguage,
+.languageSeparator {
+  color: var(--color-text-secondary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .languageSwitcher:hover .inactiveLanguage {
+    color: var(--color-accent);
+    text-shadow: 0 0 10px rgb(71 209 232 / 50%);
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .activeLanguage,
+  .inactiveLanguage {
+    transition-duration: 0s;
+  }
+
+  .languageSwitcher:active .inactiveLanguage {
+    color: var(--color-accent);
+    text-shadow: 0 0 10px rgb(71 209 232 / 50%);
+  }
+
+  .languageSwitcher:focus:not(:active) .inactiveLanguage {
+    color: var(--color-text-secondary);
+    text-shadow: none;
+  }
+}
