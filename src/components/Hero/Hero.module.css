@@ -82,28 +82,6 @@
   width: 64px;
 }
 
-.contacts {
-  display: flex;
-  align-items: center;
-  gap: var(--space-20);
-}
-
-.contactLink {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-text-secondary);
-  transition: color 0.2s ease;
-}
-
-.contactIcon {
-  width: 24px;
-  height: 24px;
-  transition:
-    color 0.2s ease,
-    filter 0.2s ease;
-}
-
 @media (hover: hover) and (pointer: fine) {
   .navigationLink:hover {
     color: var(--color-text-primary);
@@ -111,31 +89,6 @@
 
   .navigationLink:hover::before {
     width: 64px;
-  }
-
-  .contactLink:hover,
-  .contactLink:focus-visible {
-    color: var(--color-accent);
-  }
-
-  .contactLink:hover .contactIcon,
-  .contactLink:focus-visible .contactIcon {
-    filter: drop-shadow(0 0 6px rgb(71 209 232 / 55%));
-  }
-}
-
-@media (hover: none) and (pointer: coarse) {
-  .contactLink,
-  .contactIcon {
-    transition-duration: 0s;
-  }
-
-  .contactLink:active {
-    color: var(--color-accent);
-  }
-
-  .contactLink:active .contactIcon {
-    filter: drop-shadow(0 0 6px rgb(71 209 232 / 55%));
   }
 }
 

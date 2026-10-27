@@ -4,6 +4,8 @@ import { Dialog } from '../../components/Dialog/Dialog'
 import { LanguageSwitcher } from '../../components/LanguageSwitcher/LanguageSwitcher'
 import type { Language, LocalizedText } from '../../content/types'
 import { phraseCuePage } from '../../content/phraseCuePage'
+import { Contacts } from '../../components/Contacts/Contacts'
+import { contacts } from '../../content/portfolio'
 
 import styles from './PhraseCuePage.module.css'
 
@@ -264,6 +266,15 @@ export const PhraseCuePage = ({ language, onToggleLanguage }: PhraseCuePageProps
           </div>
         </section>
       </div>
+
+      <footer className={styles.pageFooter}>
+        <Link className={styles.backLink} to="/#projects">
+          <span aria-hidden="true">←</span>
+          {actions.back[language]}
+        </Link>
+
+        <Contacts contacts={contacts} />
+      </footer>
 
       <Dialog
         isOpen={selectedImage !== null}

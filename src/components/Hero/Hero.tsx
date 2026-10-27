@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router'
 import type { Contact, HeroContent, Language, NavItem } from '../../content/types'
-import GithubIcon from '../../assets/icons/github.svg?react'
-import TelegramIcon from '../../assets/icons/telegram.svg?react'
-import EmailIcon from '../../assets/icons/email.svg?react'
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher'
+import { Contacts } from '../Contacts/Contacts'
 
 import styles from './Hero.module.css'
 
@@ -14,12 +12,6 @@ interface HeroProps {
   onToggleLanguage: () => void
   navigation: NavItem[]
   contacts: Contact[]
-}
-
-const contactIcons = {
-  github: GithubIcon,
-  telegram: TelegramIcon,
-  email: EmailIcon,
 }
 
 export const Hero = ({ hero, language, onToggleLanguage, navigation, contacts }: HeroProps) => {
@@ -95,26 +87,7 @@ export const Hero = ({ hero, language, onToggleLanguage, navigation, contacts }:
         </div>
       </div>
 
-      <ul className={styles.contacts}>
-        {contacts.map((contact) => {
-          const Icon = contactIcons[contact.id]
-          const isExternal = contact.id !== 'email'
-
-          return (
-            <li key={contact.id}>
-              <a
-                className={styles.contactLink}
-                href={contact.url}
-                aria-label={contact.label}
-                target={isExternal ? '_blank' : undefined}
-                rel={isExternal ? 'noopener noreferrer' : undefined}
-              >
-                <Icon className={styles.contactIcon} aria-hidden="true" />
-              </a>
-            </li>
-          )
-        })}
-      </ul>
+      <Contacts contacts={contacts} />
     </header>
   )
 }

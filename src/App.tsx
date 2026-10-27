@@ -9,10 +9,22 @@ import { Footer } from './components/Footer/Footer'
 import { Certificates } from './components/Certificates/Certificates'
 import { Route, Routes, useLocation } from 'react-router'
 import { PhraseCuePage } from './pages/PhraseCuePage/PhraseCuePage'
+import { phraseCuePage } from './content/phraseCuePage'
 
 import styles from './App.module.css'
 
 const LANGUAGE_STORAGE_KEY = 'portfolio-language'
+
+const HOME_META = {
+  title: {
+    en: 'Alexey Surkov | Frontend Developer',
+    ru: 'Алексей Сурков | Фронтенд-разработчик',
+  },
+  description: {
+    en: 'Personal portfolio of Alexey Surkov, frontend developer.',
+    ru: 'Личное портфолио Алексея Суркова, фронтенд-разработчика.',
+  },
+}
 
 function App() {
   const [language, setLanguage] = useState<Language>(() => {
@@ -37,6 +49,18 @@ function App() {
   const currentContent = content[language]
 
   const location = useLocation()
+
+  useEffect(() => {
+    const metadata = location.pathname === '/projects/phrase-cue/' ? phraseCuePage.meta : HOME_META
+
+    document.title = metadata.title[language]
+
+    const description = document.querySelector<HTMLMetaElement>('meta[name="description"]')
+
+    if (description) {
+      description.content = metadata.description[language]
+    }
+  }, [location.pathname, language])
 
   useEffect(() => {
     if (location.pathname !== '/') {
