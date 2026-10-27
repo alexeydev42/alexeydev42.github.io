@@ -30,6 +30,14 @@
   --line-height-ui: 1.5;
   --line-height-small: 1.35;
 
+  /* Fluid typography */
+  --font-size-page-title: clamp(2rem, calc(1.7967rem + 0.9036vw), 2.375rem);
+  --font-size-case-section-title: clamp(1.375rem, calc(1.2395rem + 0.6024vw), 1.625rem);
+
+  /* Page layout */
+  --page-padding-block: clamp(48px, calc(37.333px + 2.963vw), 80px);
+  --page-padding-inline: clamp(32px, calc(2.667px + 8.148vw), 120px);
+
   /* Spacing */
   --space-4: 4px;
   --space-8: 8px;
@@ -49,4 +57,11 @@
   /* Border radius */
   --radius-sm: 8px;
   --radius-md: 12px;
+}
+
+@media (width > 1024px) {
+  :root {
+    --font-size-page-title: clamp(2.375rem, calc(0.5288rem + 2.8846vw), 3.125rem);
+    --font-size-case-section-title: clamp(1.625rem, calc(0.7019rem + 1.4423vw), 2rem);
+  }
 }

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router'
 import type { Contact, HeroContent, Language, NavItem } from '../../content/types'
-import GithubIcon from '../../assets/icons/github.svg?react'
-import TelegramIcon from '../../assets/icons/telegram.svg?react'
-import EmailIcon from '../../assets/icons/email.svg?react'
+import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher'
+import { Contacts } from '../Contacts/Contacts'
 
 import styles from './Hero.module.css'
 
@@ -14,14 +14,9 @@ interface HeroProps {
   contacts: Contact[]
 }
 
-const contactIcons = {
-  github: GithubIcon,
-  telegram: TelegramIcon,
-  email: EmailIcon,
-}
-
 export const Hero = ({ hero, language, onToggleLanguage, navigation, contacts }: HeroProps) => {
   const [activeSection, setActiveSection] = useState(navigation[0].id)
+  const location = useLocation()
 
   useEffect(() => {
     const sections = navigation
@@ -60,20 +55,7 @@ export const Hero = ({ hero, language, onToggleLanguage, navigation, contacts }:
   return (
     <header className={styles.hero}>
       <div className={styles.heroTop}>
-        <button
-          className={styles.languageSwitcher}
-          type="button"
-          onClick={onToggleLanguage}
-          aria-label={language === 'en' ? 'Switch to Russian' : 'Переключить на английский'}
-        >
-          <span className={language === 'en' ? styles.activeLanguage : styles.inactiveLanguage}>
-            EN
-          </span>
-          <span className={styles.languageSeparator}>/</span>
-          <span className={language === 'ru' ? styles.activeLanguage : styles.inactiveLanguage}>
-            RU
-          </span>
-        </button>
+        <LanguageSwitcher language={language} onToggleLanguage={onToggleLanguage} />
 
         <div className={styles.heroBody}>
           <div className={styles.identity}>
@@ -86,40 +68,26 @@ export const Hero = ({ hero, language, onToggleLanguage, navigation, contacts }:
 
           <nav className={styles.navigation}>
             {navigation.map((item) => (
-              <a
+              <Link
                 className={`${styles.navigationLink} ${
                   item.id === activeSection ? styles.navigationLinkActive : ''
                 }`}
                 key={item.id}
-                href={`#${item.id}`}
+                to={`/#${item.id}`}
+                onClick={() => {
+                  if (location.hash === `#${item.id}`) {
+                    document.getElementById(item.id)?.scrollIntoView()
+                  }
+                }}
               >
                 {item.title}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
       </div>
 
-      <ul className={styles.contacts}>
-        {contacts.map((contact) => {
-          const Icon = contactIcons[contact.id]
-          const isExternal = contact.id !== 'email'
-
-          return (
-            <li key={contact.id}>
-              <a
-                className={styles.contactLink}
-                href={contact.url}
-                aria-label={contact.label}
-                target={isExternal ? '_blank' : undefined}
-                rel={isExternal ? 'noopener noreferrer' : undefined}
-              >
-                <Icon className={styles.contactIcon} aria-hidden="true" />
-              </a>
-            </li>
-          )
-        })}
-      </ul>
+      <Contacts contacts={contacts} />
     </header>
   )
 }
