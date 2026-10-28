@@ -1,6 +1,5 @@
 import { Link } from 'react-router'
 import type { Language, Project } from '../../content/types'
-import ArrowIcon from '../../assets/icons/arrow-badge-right.svg?react'
 import styles from './ProjectCard.module.css'
 
 interface ProjectCardProps {
@@ -15,21 +14,7 @@ export const ProjectCard = ({ project, language, onPreviewClick }: ProjectCardPr
   return (
     <article className={styles.card}>
       <div className={styles.content}>
-        <h3 className={styles.title}>
-          <a
-            className={styles.titleLink}
-            href={project.repository}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>{project.name}</span>
-
-            <span className={styles.titleIcons} aria-hidden="true">
-              <ArrowIcon className={styles.arrowLeft} />
-              <ArrowIcon className={styles.arrowRight} />
-            </span>
-          </a>
-        </h3>
+        <h3 className={styles.title}>{project.name}</h3>
 
         <p className={styles.description}>{project.description[language]}</p>
 
@@ -41,19 +26,33 @@ export const ProjectCard = ({ project, language, onPreviewClick }: ProjectCardPr
           ))}
         </ul>
 
-        {project.demo && (
+        <div className={styles.projectLinks}>
+          {project.demo && (
+            <a
+              className={styles.projectLink}
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>{language === 'en' ? 'Live demo' : 'Демо'}</span>
+              <span className={styles.linkArrow} aria-hidden="true">
+                ↗
+              </span>
+            </a>
+          )}
+
           <a
             className={styles.projectLink}
-            href={project.demo}
+            href={project.repository}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span>{language === 'en' ? 'Live demo' : 'Демо'}</span>
+            <span>GitHub</span>
             <span className={styles.linkArrow} aria-hidden="true">
               ↗
             </span>
           </a>
-        )}
+        </div>
       </div>
 
       {project.detailPath ? (

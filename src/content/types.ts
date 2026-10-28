@@ -39,6 +39,7 @@ export interface Contact {
 export interface HeroContent {
   name: string
   role: string
+  jobSearchStatus: string
   intro: string
 }
 

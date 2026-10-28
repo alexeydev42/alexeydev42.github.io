@@ -92,56 +92,60 @@ function App() {
   }, [])
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <div className={styles.page}>
-            <div className={styles.spotlight} aria-hidden="true" />
-
-            <Hero
-              hero={currentContent.hero}
-              language={language}
-              onToggleLanguage={toggleLanguage}
-              navigation={currentContent.navigation}
-              contacts={contacts}
-            />
-
-            <main className={styles.content}>
-              <About title={currentContent.sectionTitles.about} paragraphs={currentContent.about} />
-
-              <Projects
-                title={currentContent.sectionTitles.projects}
-                projects={projects}
+    <>
+      <div className={styles.spotlight} aria-hidden="true" />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className={styles.page}>
+              <Hero
+                hero={currentContent.hero}
                 language={language}
+                onToggleLanguage={toggleLanguage}
+                navigation={currentContent.navigation}
+                contacts={contacts}
               />
 
-              <Skills
-                title={currentContent.sectionTitles.skills}
-                skillGroups={skillGroups}
-                language={language}
-              />
+              <main className={styles.content}>
+                <About
+                  title={currentContent.sectionTitles.about}
+                  paragraphs={currentContent.about}
+                />
 
-              <Certificates
-                content={certificates}
-                title={currentContent.sectionTitles.certificates}
-                language={language}
-              />
+                <Projects
+                  title={currentContent.sectionTitles.projects}
+                  projects={projects}
+                  language={language}
+                />
 
-              <Footer
-                content={currentContent.footer}
-                analyticsNote={currentContent.analyticsNote}
-              />
-            </main>
-          </div>
-        }
-      />
+                <Skills
+                  title={currentContent.sectionTitles.skills}
+                  skillGroups={skillGroups}
+                  language={language}
+                />
 
-      <Route
-        path="/projects/phrase-cue/"
-        element={<PhraseCuePage language={language} onToggleLanguage={toggleLanguage} />}
-      />
-    </Routes>
+                <Certificates
+                  content={certificates}
+                  title={currentContent.sectionTitles.certificates}
+                  language={language}
+                />
+
+                <Footer
+                  content={currentContent.footer}
+                  analyticsNote={currentContent.analyticsNote}
+                />
+              </main>
+            </div>
+          }
+        />
+
+        <Route
+          path="/projects/phrase-cue/"
+          element={<PhraseCuePage language={language} onToggleLanguage={toggleLanguage} />}
+        />
+      </Routes>
+    </>
   )
 }
 
