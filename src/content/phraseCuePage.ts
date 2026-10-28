@@ -72,8 +72,8 @@ export const phraseCuePage = {
       ru: 'Приложение для сохранения и изучения английских фраз из сериалов.',
     },
     summary: {
-      en: 'A personal project inspired by my habit of watching TV shows in English. I took it from the initial idea and UI designs to a working application with subtitle import, translation, a phrase library and a study mode.',
-      ru: 'Самостоятельный проект, который вырос из моей привычки смотреть сериалы на английском. Я разработал его от первоначальной идеи и макетов до работающего приложения с импортом субтитров, переводом, библиотекой фраз и режимом изучения.',
+      en: 'PhraseCue is a personal project I designed and built from the initial idea to a working release. It lets users import SRT subtitles, find dialogue by timecode or text, save phrases with translations, and review them in study mode. The app is built with React, TypeScript and Redux Toolkit, with local data storage and serverless translation.',
+      ru: 'PhraseCue — самостоятельный проект, который я разработал от первоначальной идеи до работающего приложения. В нём можно импортировать SRT-субтитры, находить реплики по таймкоду или тексту, сохранять фразы с переводом и повторять их в режиме изучения. Приложение построено на React, TypeScript и Redux Toolkit, с локальным хранением данных и переводом через serverless API.',
     },
     projectType: {
       en: 'Personal project',
@@ -90,12 +90,12 @@ export const phraseCuePage = {
       ru: 'Как появилась идея',
     },
     problem: {
-      en: "I've been actively learning English and often watch TV shows in the original language with English subtitles, usually on my phone. Every now and then I come across an interesting or unfamiliar phrase that I'd like to translate and, ideally, remember.\n\nBut doing that meant interrupting the show: taking a screenshot and extracting the text, or typing the phrase into a translator manually. And if I wanted to come back to it later, I needed somewhere to save it.",
-      ru: 'Я довольно активно учу английский и часто смотрю сериалы в оригинале с английскими субтитрами. Обычно делаю это на телефоне, и время от времени попадаются интересные или непонятные фразы, которые хочется перевести, а лучше ещё и запомнить.\n\nНо каждый раз приходилось отвлекаться от просмотра: делать скриншот и распознавать текст либо вручную переписывать фразу в переводчик. А если хотелось вернуться к ней позже, нужно было ещё где-то её сохранить.',
+      en: 'I often watch TV shows in English with English subtitles, usually on my phone. Sometimes I come across a phrase I want to translate and remember, but copying it into a translator interrupts the show. Saving it for later takes another step.',
+      ru: 'Я часто смотрю сериалы на английском с английскими субтитрами, обычно на телефоне. Иногда встречается фраза, которую хочется перевести и запомнить, но ради этого приходится прерывать просмотр и переносить текст в переводчик. А чтобы вернуться к фразе позже, её нужно ещё где-то сохранить.',
     },
     idea: {
-      en: "When I started thinking about building a project of my own, this problem came to mind. I thought it would be useful to import a show's subtitles in advance and then, while watching, enter an approximate timecode to find the line I was looking for.\n\nI also wanted to translate phrases, save them and come back to them in a separate study mode. That's how PhraseCue started.\n\nThe name fits the idea: cue can mean a hint or prompt, and in subtitle formats it also refers to a block of text associated with a specific time.",
-      ru: 'Когда я задумался о собственном проекте, вспомнил об этой проблеме. Подумал, что было бы удобно заранее загрузить субтитры сериала, а во время просмотра просто указать примерный таймкод и сразу найти нужную реплику.\n\nК этому добавилась возможность получать перевод, сохранять фразы и потом повторять их в отдельном режиме изучения. Так появился PhraseCue.\n\nНазвание тоже связано с идеей приложения: cue может означать «подсказка», а в контексте субтитров так называют отдельный блок текста, привязанный к определённому времени.',
+      en: "I wanted to import subtitles in advance and find a line using an approximate timecode while watching an episode. From there, I could translate the phrase, save it and return to it in a separate study mode. That's how PhraseCue started.\n\nThe name fits the idea: cue can mean a hint or prompt, and in subtitle formats it refers to a timed block of text.",
+      ru: 'Я решил, что было бы удобно заранее импортировать субтитры, а во время просмотра находить нужную реплику по примерному таймкоду. Затем можно было бы перевести фразу, сохранить её и вернуться к ней в отдельном режиме изучения. Так появился PhraseCue.\n\nНазвание связано с идеей приложения: cue может означать "подсказку", а в субтитрах так называют блок текста с привязкой ко времени.',
     },
   },
   workflow: {
@@ -119,8 +119,8 @@ export const phraseCuePage = {
         ru: 'Поиск нужной реплики',
       },
       description: {
-        en: "While watching, I can pause the video, switch to PhraseCue and enter an approximate timecode. The app finds the nearest subtitle cue and displays the surrounding lines. If the phrase is a little earlier or later, I can load more lines.\n\nI later added text search within the selected episode. Now it's also possible to find a line by a word or part of a sentence, without knowing its timestamp.",
-        ru: 'Во время просмотра достаточно поставить видео на паузу, переключиться в PhraseCue и ввести примерное время. Приложение находит ближайшую реплику и показывает несколько соседних строк. Если нужный текст оказался немного раньше или позже, можно посмотреть дополнительные реплики.\n\nПозднее я добавил и текстовый поиск по субтитрам выбранного эпизода. Теперь фразу можно найти по слову или части предложения, даже если точный таймкод неизвестен.',
+        en: "While watching, I can pause the video, switch to PhraseCue and enter an approximate timecode. The app finds the nearest subtitle cue and displays the surrounding lines. If the phrase is a little earlier or later, I can load more lines.\n\nIt's also possible to search the selected episode by a word or part of a sentence, without knowing the timestamp.",
+        ru: 'Во время просмотра достаточно поставить видео на паузу, переключиться в PhraseCue и ввести примерное время. Приложение находит ближайшую реплику и показывает несколько соседних строк. Если нужный текст оказался немного раньше или позже, можно посмотреть дополнительные реплики.\n\nТакже можно искать фразы в выбранном эпизоде по слову или части предложения, даже не зная таймкода.',
       },
     },
     capture: {
@@ -155,8 +155,8 @@ export const phraseCuePage = {
         ru: 'React, Redux и структура приложения',
       },
       description: {
-        en: 'PhraseCue is built with React and TypeScript, using Redux Toolkit for state management and React Router for navigation. I organized the logic for subtitles, saved phrases and settings into separate feature modules.\n\nOne reason I chose Redux Toolkit was to gain more hands-on experience with state management. PhraseCue gave me the opportunity to work with the store, slices, selectors and asynchronous operations in a single application, where all these parts work together.',
-        ru: 'PhraseCue построен на React и TypeScript с использованием Redux Toolkit для управления состоянием и React Router для навигации. Логику работы с субтитрами, сохранёнными фразами и настройками я разделил на отдельные функциональные модули.\n\nRedux Toolkit я выбрал в том числе потому, что хотел глубже изучить управление состоянием на практике. В PhraseCue удалось поработать со store, slices, selectors и асинхронными операциями в рамках одного приложения, где все эти части связаны между собой.',
+        en: 'PhraseCue is built with React and TypeScript, using Redux Toolkit for state management and React Router for navigation. I organized the logic for subtitles, saved phrases and settings into separate feature modules.\n\nI chose Redux Toolkit partly to gain more hands-on experience with shared state management. I used slices and selectors to manage state shared across different screens, alongside asynchronous operations for data-related workflows.',
+        ru: 'PhraseCue построен на React и TypeScript с использованием Redux Toolkit для управления состоянием и React Router для навигации. Логику работы с субтитрами, сохранёнными фразами и настройками я разделил на отдельные функциональные модули.\n\nRedux Toolkit я выбрал в том числе для того, чтобы лучше разобраться с общим состоянием на практике. Использовал slices и selectors для управления состоянием, общим для разных экранов, а также асинхронные операции для работы с данными.',
       },
     },
     storage: {
@@ -200,8 +200,8 @@ export const phraseCuePage = {
       ru: 'От MVP к следующим релизам',
     },
     description: {
-      en: "I built the first working version in about 3 weeks. During that time, I went from the initial product idea, data structure and UI designs to an application with SRT import, translation, a phrase library, study cards and backups.\n\nI also set up ESLint, Stylelint, Prettier, testing with Vitest and React Testing Library, and GitHub Actions for project checks and deployment.\n\nThe first public MVP was released on October 23, 2026. I continued improving the app afterwards, adding a first-time introduction and a sample SRT file so visitors could try PhraseCue without finding their own subtitles.\n\nOne of the next improvements was text search. The challenge wasn't just finding matching subtitle lines, but also preserving the search query, loaded results and scroll position when moving to phrase selection and back. This functionality was released in version 1.4.0.",
-      ru: 'Первую рабочую версию я собрал примерно за 3 недели. За это время прошёл путь от продуктовой идеи, структуры данных и макетов до приложения с импортом SRT, переводом, библиотекой, карточками для изучения и резервным копированием.\n\nПараллельно настроил ESLint, Stylelint, Prettier, тестирование через Vitest и React Testing Library, а также GitHub Actions для проверки проекта и публикации.\n\nПервый публичный MVP вышел 23 октября 2026 года. После этого я продолжил дорабатывать приложение. Добавил краткое знакомство с интерфейсом для новых пользователей и пример SRT-файла, чтобы можно было попробовать PhraseCue без поиска собственных субтитров.\n\nСледующим заметным изменением стал текстовый поиск по субтитрам. При его реализации важно было не только найти совпадения, но и сохранить запрос, загруженные результаты и положение прокрутки, когда пользователь переходит к выбору фразы и возвращается обратно. Эта функциональность вышла в версии 1.4.0.',
+      en: 'I built and released the first MVP in about three weeks, with the public release on October 23, 2026. Alongside the main features, I set up ESLint, Stylelint, Prettier, testing with Vitest and React Testing Library, and GitHub Actions for project checks and deployment.\n\nAfter the release, I added a short introduction and a sample SRT file so visitors could try the app without preparing their own subtitles. I also implemented text search. The challenging part was preserving the search query, loaded results and scroll position when moving between subtitle search and phrase selection. This functionality was released in version 1.4.0.',
+      ru: 'Первую MVP-версию я разработал и выпустил примерно за три недели. Публичный релиз состоялся 23 октября 2026 года. Параллельно с основной функциональностью настроил ESLint, Stylelint, Prettier, тесты на Vitest и React Testing Library, а также GitHub Actions для проверок проекта и деплоя.\n\nПосле релиза добавил краткое знакомство с приложением и пример SRT-файла, чтобы посетители могли попробовать PhraseCue без подготовки собственных субтитров. Также реализовал текстовый поиск. Сложность заключалась не только в поиске совпадений, но и в сохранении запроса, загруженных результатов и положения прокрутки при переходе между поиском и выбором фразы. Эта возможность появилась в версии 1.4.0.',
     },
   },
   outcome: {
@@ -210,8 +210,8 @@ export const phraseCuePage = {
       ru: 'Что я получил от проекта',
     },
     description: {
-      en: 'PhraseCue became the first independent application of this scale that I took from an idea to a public release.\n\nWorking on it gave me experience with the entire development process: from planning user flows and designing the interface to handling data, integrating external services and deploying the app.\n\nSome challenges only appeared along the way: unreliable access to external services, the need for backups, error handling and improving the interface after the first releases.\n\nI now use PhraseCue to study English myself and continue developing it.',
-      ru: 'PhraseCue стал первым самостоятельным приложением такого масштаба, которое я довёл от идеи до публичного релиза.\n\nРабота над ним позволила пройти весь процесс разработки: от продумывания пользовательских сценариев и проектирования интерфейса до работы с данными, подключения внешних сервисов и публикации приложения.\n\nПо ходу разработки возникали и задачи, которых я изначально не ожидал: проблемы с доступностью сервисов, необходимость резервного копирования, обработка ошибок и доработка интерфейса после первых релизов.\n\nСейчас я сам использую PhraseCue для изучения английского и продолжаю его развивать.',
+      en: "PhraseCue is the first personal application of this scale that I've taken from an idea to a public release. I now use it to study English myself and continue improving it, paying particular attention to reliability, data recovery and the small usability issues that become apparent in everyday use.",
+      ru: 'PhraseCue стал первым самостоятельным приложением такого масштаба, которое я довёл от идеи до публичного релиза. Сейчас я сам использую его для изучения английского и продолжаю дорабатывать, уделяя внимание надёжности, восстановлению данных и небольшим неудобствам, которые обнаруживаются при повседневном использовании.',
     },
   },
   images: {

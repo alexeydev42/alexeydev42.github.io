@@ -12,7 +12,7 @@
     position: sticky;
     top: 0;
     z-index: 20;
-    margin-inline: calc(0px - var(--page-padding-inline));
+    margin-inline: calc(-1 * var(--page-padding-inline));
     padding: var(--space-20) var(--page-padding-inline);
     background-color: var(--color-background-translucent);
     backdrop-filter: blur(8px);

@@ -5,6 +5,7 @@ export const content: Record<Language, PortfolioContent> = {
     hero: {
       name: 'Alexey Surkov',
       role: 'Frontend Developer',
+      jobSearchStatus: 'Open to frontend developer opportunities',
       intro:
         'I build web interfaces, learn by doing, and try to understand how things work under the hood, not just how they look on screen.',
     },
@@ -83,6 +84,7 @@ export const content: Record<Language, PortfolioContent> = {
     hero: {
       name: 'Алексей Сурков',
       role: 'Фронтенд-разработчик',
+      jobSearchStatus: 'Рассматриваю предложения по работе фронтенд-разработчиком',
       intro:
         'Создаю веб-интерфейсы, учусь на практике и стараюсь понимать, как всё работает внутри, а не только как выглядит на экране.',
     },
@@ -181,39 +183,16 @@ export const projects: Project[] = [
     detailPath: '/projects/phrase-cue/',
   },
   {
-    id: 'portfolio',
-    name: 'Portfolio Website',
-    image: '/images/projects/portfolio.webp',
-    description: {
-      en: 'My personal portfolio website, which you are viewing right now. It is built with React and TypeScript and includes responsive layouts, English and Russian content, a certificate viewer, active section navigation and a pointer-following spotlight effect.',
-      ru: 'Мой личный сайт-портфолио, на котором вы находитесь прямо сейчас, построенный на React и TypeScript. В нём реализованы адаптивная вёрстка, английская и русская версии, просмотр сертификатов, активная навигация по секциям и spotlight-эффект, следующий за курсором.',
-    },
-    technologies: ['React', 'TypeScript', 'Vite', 'CSS Modules'],
-    repository: 'https://github.com/alexeydev42/alexeydev42.github.io',
-  },
-  {
     id: 'skill-swap',
     name: 'SkillSwap',
     image: '/images/projects/skill-swap.webp',
     description: {
-      en: 'A React app for exchanging skills between users. I worked on it as part of a team, building UI components and application logic. After the team project ended, I continued developing my own version: improving responsiveness, fixing deployment issues and cleaning up the project.',
-      ru: 'React-приложение для обмена навыками между пользователями. Я работал над ним в составе команды, делал UI-компоненты и логику приложения. После завершения командного этапа продолжил развивать свою версию: доработал адаптив, исправил проблемы с деплоем и привёл проект в порядок.',
+      en: 'I worked on SkillSwap, a React application for exchanging skills, as part of a team, contributing UI components and application logic. After the team project ended, I continued developing my own version, adding responsive layouts for tablets and mobile devices, implementing a dark theme, and improving accessibility for forms and interactive elements. I also set up automated deployment to GitHub Pages, fixed routing and asset loading issues, and expanded test coverage.',
+      ru: 'Участвовал в командной разработке SkillSwap, React-приложения для обмена навыками: занимался UI-компонентами и логикой приложения. После завершения командного этапа продолжил развивать собственную версию проекта: добавил адаптивную вёрстку для планшетов и мобильных устройств, реализовал тёмную тему и улучшил доступность форм и интерактивных элементов. Настроил автоматический деплой на GitHub Pages, исправил проблемы с маршрутизацией и загрузкой ресурсов, дополнил тесты.',
     },
     technologies: ['React', 'TypeScript', 'Redux Toolkit', 'React Router', 'CSS Modules'],
     repository: 'https://github.com/alexeydev42/SkillSwap_55_3',
     demo: 'https://alexeydev42.com/SkillSwap_55_3/',
-  },
-  {
-    id: 'todo-react',
-    name: 'To Do React',
-    image: '/images/projects/todo-react.webp',
-    description: {
-      en: 'A small React task manager that started as a learning project and that I later continued developing on my own. It includes state management with useReducer and Context, search, completed task counters, theme switching, local persistence and custom hooks.',
-      ru: 'Небольшой менеджер задач на React. Начал его во время изучения React и потом продолжил дорабатывать самостоятельно. В проекте есть управление состоянием через useReducer и Context, поиск, счётчик выполненных задач, переключение темы, сохранение данных и кастомные хуки.',
-    },
-    technologies: ['React', 'JavaScript', 'Context API', 'useReducer', 'SCSS Modules', 'Vite'],
-    repository: 'https://github.com/alexeydev42/todo-react',
-    demo: 'https://alexeydev42.com/todo-react/',
   },
   {
     id: 'stellar-burgers',
@@ -227,15 +206,15 @@ export const projects: Project[] = [
     repository: 'https://github.com/alexeydev42/stellar-burgers',
   },
   {
-    id: 'weblarek',
-    name: 'WebLarek',
-    image: '/images/projects/weblarek.webp',
+    id: 'portfolio',
+    name: 'Portfolio Website',
+    image: '/images/projects/portfolio.webp',
     description: {
-      en: 'A TypeScript e-commerce app with a product catalog, cart and checkout flow. The main focus of the project was application architecture. I implemented data models, reusable view classes, form logic, API interaction and event-based communication between different parts of the interface.',
-      ru: 'TypeScript-приложение интернет-магазина с каталогом, корзиной и оформлением заказа. Основной акцент был на архитектуре приложения. Я реализовал модели данных, переиспользуемые view-классы, логику форм, работу с API и взаимодействие частей интерфейса через события.',
+      en: 'My personal portfolio website built with React and TypeScript. It showcases my projects, including a dedicated PhraseCue case study, as well as my training certificates. The site features responsive layouts, English and Russian versions, image previews, section navigation, and keyboard and touch interactions. Key UI interactions are covered by automated tests.',
+      ru: 'Мой личный сайт-портфолио на React и TypeScript. Здесь представлены мои проекты, в том числе отдельная страница с подробным описанием PhraseCue, а также сертификаты об обучении. Реализованы адаптивная вёрстка, русская и английская версии, просмотр изображений, навигация по разделам и поддержка управления с клавиатуры и сенсорных устройств. Основные сценарии взаимодействия покрыты автоматическими тестами.',
     },
-    technologies: ['TypeScript', 'HTML', 'SCSS', 'REST API', 'Vite'],
-    repository: 'https://github.com/alexeydev42/weblarek',
+    technologies: ['React', 'TypeScript', 'Vite', 'CSS Modules'],
+    repository: 'https://github.com/alexeydev42/alexeydev42.github.io',
   },
 ]
 

@@ -63,6 +63,7 @@ export const Hero = ({ hero, language, onToggleLanguage, navigation, contacts }:
               <a href="/">{hero.name}</a>
             </h1>
             <p className={styles.role}>{hero.role}</p>
+            <p className={styles.jobSearchStatus}>{hero.jobSearchStatus}</p>
             <p className={styles.intro}>{hero.intro}</p>
           </div>
 
